@@ -1,0 +1,61 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import './prismjs-dracula';
+@import './markdown-modest';
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  transition: $transition-duration background-color $transition-function;
+  font-family: 'Spoqa Han Sans', Helvetica AppleGothic sans-serif;
+}
+
+body {
+  --bg: #F4F7FB;
+  --textNormal: #24292e;
+  --textWeak: #9DA3B9;
+  --textTitle: #2F324C;
+  --primary: #578CDC;
+  --card-box-shadow: rgba(0, 0, 0, 0.1);
+  --card-bg: #fff;
+  --textQuote: #8B93AC;
+  --textQuoteBg: #F3F4F6;
+  --dividerBg: #e3e3e3;
+
+  background-color: var(--bg);
+
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --bg: #1C1E2A;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textWeak: #9DA3B9;
+  --textTitle: #f9f9f9;
+  --primary: #578CDC;
+  --card-box-shadow: rgba(0, 0, 0, 0.1);
+  --card-bg: #2A2C3E;
+
+  --textQuote: rgb(137, 143, 164);
+  --textQuoteBg: rgb(59, 65, 91);
+  --dividerBg: rgba(227, 227, 227, 0.21);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: $transition-duration $transition-function;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.link-active {
+  color: var(--primary);
+}

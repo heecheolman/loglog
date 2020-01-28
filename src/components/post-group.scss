@@ -1,0 +1,35 @@
+@import './../styles/mixins';
+
+.post-group {
+  @include card();
+  padding: 15px;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      position: relative;
+
+      a {
+        @include link();
+        position: relative;
+        padding-left: 75px;
+
+        .post-date {
+          position: absolute;
+          left: 0;
+          color: var(--textWeak);
+        }
+      }
+
+      :hover {
+      }
+    }
+  }
+}
+
+.post-group:not(:last-child) {
+  margin-bottom: 10px;
+}

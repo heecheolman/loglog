@@ -1,0 +1,161 @@
+.markdown-content {
+  font-weight: 300;
+
+  .toc {
+    padding: 20px;
+    border-radius: 2px;
+    background-color: var(--textQuoteBg);
+    position: relative;
+
+    ul:first-child {
+      padding: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        ul {
+          li {
+              &:before {
+                display: inline-block;
+                content: ' ';
+                width: 3px;
+                height: 3px;
+                margin-bottom: 4px;
+                margin-right: 10px;
+                border-radius: 50%;
+                background-color: var(--primary);
+              }
+          }
+        }
+      }
+
+    }
+
+  }
+
+  h1 {
+    margin-top: 40px;
+    margin-bottom: 36px;
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+  h2 {
+    margin-top: 36px;
+    margin-bottom: 32px;
+    font-size: 2.0rem;
+    font-weight: 400;
+  }
+  h3 {
+    margin-top: 32px;
+    margin-bottom: 28px;
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+  h4 {
+    margin-top: 28px;
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  h5 {
+    margin-top: 24px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  h6 {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  p {
+    line-height: 180%;
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  table {
+    padding: 0;
+    border-collapse:collapse;
+  }
+  table tr {
+    border-top: 1px solid var(--textWeak);
+    background-color: var(--card-bg);
+    margin: 0;
+    padding: 0;
+  }
+
+  table tr th {
+    font-weight: bold;
+    border: 1px solid var(--textWeak);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+    color: var(--textNormal);
+  }
+
+  table tr td {
+    border: 1px solid var(--textWeak);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+  }
+
+  table tr th :first-child, table tr td :first-child {
+    margin-top: 0;
+  }
+
+  table tr th :last-child, table tr td :last-child {
+    margin-bottom: 0;
+  }
+
+  ul, ol {
+    line-height: 200%;
+
+    li {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 12px 15px;
+    background-color: var(--textQuoteBg);
+    box-shadow: inset 2px 0 0 0 var(--textQuote);
+
+    p {
+      margin: 0;
+      color: var(--textQuote);
+      font-weight: 300;
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--textQuoteBg);
+  }
+}

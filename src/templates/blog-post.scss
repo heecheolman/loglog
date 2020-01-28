@@ -1,0 +1,22 @@
+@import './../styles/mixins';
+
+.post-section {
+  @include card();
+  padding: 24px;
+
+  &-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--textTitle);
+  }
+
+  &-frontmatter {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--textWeak);
+  }
+}
+
+.tag-section {
+  margin-top: 10px;
+}
