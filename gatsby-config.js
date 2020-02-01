@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://heecheolman.dev`,
     title: `heecheolman`,
+    image: `/images/heecheolman-profile.jpeg`,
     description: `새롭게 배우는것에 거리낌이 없는 개발자 김희철입니다. Specialist 보다는 Generalist 가 되고싶고, 배운것에 대해 기록해 경험을 공유하고 싶습니다.`,
     author: `heecheolman`,
     timeline: [
@@ -27,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/contents`,
+        path: `${__dirname}/contents`,
         name: 'contents',
       },
     },

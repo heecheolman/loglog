@@ -1,11 +1,9 @@
 ---
-path: "/review/2019"
-title: '2019년 회고'
+path: /review/2019
+title: 2019년 회고
 date: 2019-12-30 00:12:14
-category: 'other'
-description:  '2019년을 통틀어 어떻게 지내왔는지 무엇을위해 달려왔는지 이룬것은 무엇인지, 앞으로 나아갈 방향은 어디인지 회고합니다.'
-author: 'HeeCheolKim'
-featuredImage: '../images/gatsby-astronaut.png'
+description: 2019년을 통틀어 어떻게 지내왔는지 무엇을위해 달려왔는지 이룬것은 무엇인지, 앞으로 나아갈 방향은 어디인지 회고합니다.
+author: HeeCheolKim
 tags: ["review"]
 ---
 
