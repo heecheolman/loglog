@@ -11,7 +11,6 @@ function ProfileCard ({ timeline }) {
       <div className="card-title">프로필</div>
       <div className="header">
         <div className="profile-image">
-
         </div>
       </div>
       <div className="body">

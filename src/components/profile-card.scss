@@ -10,10 +10,11 @@
     width: 100%;
 
     .profile-image {
+      background: url('./../images/heecheolman-profile.jpeg') center center;
+      background-size: 130px;
       width: 100px;
       height: 100px;
       border-radius: 120px;
-      background-color: var(--textWeak);
     }
   }
 
