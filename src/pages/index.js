@@ -5,14 +5,15 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ProfileCard from '../components/profile-card'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-const IndexPage = () => {
+
+function IndexPage () {
   const { timeline } = useSiteMetadata();
   return (
     <Layout>
       <SEO title="홈"/>
       <ProfileCard timeline={timeline} />
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`

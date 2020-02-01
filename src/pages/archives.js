@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import PostGroup from '../components/post-group'
 import postGroupByDate from '../services/post-group-by-date'
 
-const Archives = ({ data }) => {
+function Archives ({ data }) {
   const {
     edges: postList,
     dateGroup,
