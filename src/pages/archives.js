@@ -14,7 +14,7 @@ const Archives = ({ data }) => {
   const postEntries = postGroupByDate(postList, dateGroup);
   return (
     <Layout>
-      <SEO title="Home"/>
+      <SEO title="아카이브"/>
       {
         postEntries.map(([title, postList]) =>
           <PostGroup

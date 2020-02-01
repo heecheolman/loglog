@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "heecheolman-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "HeeCheolKim's Blog. Published By Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "HeeCheolKim <msn9975@gmail.com>",
   "dependencies": {
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -35,7 +35,8 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog"
   ],
   "license": "MIT",
   "scripts": {
@@ -49,7 +50,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/heecheolman"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

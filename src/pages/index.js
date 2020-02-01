@@ -9,7 +9,7 @@ const IndexPage = () => {
   const { timeline } = useSiteMetadata();
   return (
     <Layout>
-      <SEO title="Home"/>
+      <SEO title="홈"/>
       <ProfileCard timeline={timeline} />
     </Layout>
   )
