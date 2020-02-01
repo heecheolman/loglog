@@ -93,12 +93,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `heecheolman`,
+        name: `heecheolman.dev`,
         short_name: `heecheolman`,
         start_url: `/`,
         background_color: `#578CDC`,
         theme_color: `#578CDC`,
-        display: `heecheolman`,
+        display: `minimal-ui`,
         icon: `src/images/heecheolman-profile.jpeg`, // This path is relative to the root of the site.
       },
     },
@@ -136,6 +136,27 @@ module.exports = {
           })
       }
     },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://heecheolman.dev`,
+        sitemap: `https://heecheolman.dev/sitemap.xml`,
+        policy: [{
+          userAgent: '*',
+          allow: '/',
+        }],
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-157532846-1`,
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+      },
+    }
   ],
 
 }
