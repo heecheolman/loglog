@@ -15,6 +15,7 @@ export const useSiteMetadata = () => {
               description
               major
             }
+            utterenceRepo
           }
         }
       }

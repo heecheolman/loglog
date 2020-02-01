@@ -5,9 +5,12 @@ import './blog-post.scss';
 import TagLabel from '../components/tag-label'
 import Divider from '../components/divider'
 import { graphql } from 'gatsby'
+import { Utterences } from '../components/utterances'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
+  const { utterenceRepo } = useSiteMetadata();
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
@@ -36,6 +39,7 @@ export default function Template({ data }) {
           )
         }
       </div>
+      <Utterences repo={utterenceRepo}/>
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ module.exports = {
     image: `/heecheolman-profile.jpeg`,
     description: `새롭게 배우는것에 거리낌이 없는 개발자 김희철입니다. Specialist 보다는 Generalist 가 되고싶고, 배운것에 대해 기록해 경험을 공유하고 싶습니다.`,
     author: `heecheolman`,
+    utterenceRepo: `heecheolman/loglog`,
     timeline: [
       {
         date: '2019.01',
