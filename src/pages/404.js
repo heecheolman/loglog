@@ -1,12 +1,13 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import NotFound from '../components/not-found'
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
+    <SEO title="404 페이지를 찾을 수 없습니다"/>
+    <NotFound />
   </Layout>
 )
 
