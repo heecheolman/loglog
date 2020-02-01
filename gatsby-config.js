@@ -2,13 +2,12 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://heecheolman.dev`,
     title: `heecheolman`,
-    image: `/images/heecheolman-profile.jpeg`,
+    image: `/heecheolman-profile.jpeg`,
     description: `새롭게 배우는것에 거리낌이 없는 개발자 김희철입니다. Specialist 보다는 Generalist 가 되고싶고, 배운것에 대해 기록해 경험을 공유하고 싶습니다.`,
     author: `heecheolman`,
     timeline: [
       {
         date: '2019.01',
-        thumbnail: 'bznav.png',
         title: '에멘탈',
         major: `프론트엔드`,
         description: `<a href="https://emmental.co.kr" target="_blank" rel="noopener noreferrer">에멘탈</a>의 프론트엔드 직군으로 입사해 Angular, Typescript 를 이용해 <a href="https://bznav.com" target="_blank" rel="noopener noreferrer">비즈넵</a> 서비스를 개발하고 있습니다.`,
@@ -100,7 +99,7 @@ module.exports = {
         background_color: `#578CDC`,
         theme_color: `#578CDC`,
         display: `minimal-ui`,
-        icon: `src/images/heecheolman-profile.jpeg`, // This path is relative to the root of the site.
+        icon: `static/heecheolman-profile.jpeg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,

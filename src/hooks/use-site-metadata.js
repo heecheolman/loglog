@@ -14,7 +14,6 @@ export const useSiteMetadata = () => {
               title
               description
               major
-              thumbnail
             }
           }
         }

@@ -10,7 +10,7 @@ function IndexPage () {
   const { timeline } = useSiteMetadata();
   return (
     <Layout>
-      <SEO title="홈"/>
+      <SEO title="홈" />
       <ProfileCard timeline={timeline} />
     </Layout>
   );
