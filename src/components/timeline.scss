@@ -1,0 +1,113 @@
+$timelineHeight: 100px;
+$timelineLineColor: var(--dividerBg);
+$timelineSymbolColor: var(--primary);
+$timelineSymbolWidth: 2px;
+$timelineSymbolSize: 10px;
+
+.timeline {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: $timelineHeight;
+  align-items: center;
+  padding-left: 80px;
+
+  .timeline-content {
+    display: block;
+
+    .timeline-title  {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        margin-right: 8px;
+      }
+
+      .title {
+        font-size: 13px;
+        font-weight: bold;
+        color: var(--textNormal);
+      }
+      .major {
+        font-size: 13px;
+        color: var(--textNormal);
+      }
+
+    }
+    .timeline-major {
+      font-size: 12px;
+      font-weight: normal;
+      color: var(--textNormal);
+      margin-bottom: 8px;
+    }
+    .timeline-description {
+      font-size: 12px;
+      color: var(--textWeak);
+    }
+  }
+
+  .line {
+    position: absolute;
+    left: $timelineSymbolSize / 2;
+    z-index: 1;
+
+    &:before {
+      display: block;
+      content: ' ';
+      width: 1px;
+      height: $timelineHeight / 2;
+      border-left: 1px solid $timelineLineColor;
+      //background-color: $timelineLineColor;
+    }
+    &:after {
+      display: block;
+      content: ' ';
+      width: 1px;
+      height: $timelineHeight / 2;
+      border-left: 1px solid $timelineLineColor;
+      //background-color: $timelineLineColor;
+    }
+  }
+
+  .date {
+    font-size: 11px;
+    position: absolute;
+    color: var(--primary);
+    left: 20px;
+  }
+
+
+  .symbol {
+    position: absolute;
+    left: 0;
+    width: $timelineSymbolSize;
+    height: $timelineSymbolSize;
+    background-color: var(--card-bg);
+    border: $timelineSymbolWidth solid $timelineSymbolColor;
+    border-radius: 50%;
+    z-index: 2;
+  }
+}
+
+.timeline:first-child {
+  .line {
+    &:before {
+      border-left: 1px dashed $timelineLineColor;
+    }
+  }
+}
+
+.timeline:last-child {
+  .line {
+    &:after {
+      border: 0;
+    }
+  }
+  .symbol {
+    background-color: var(--primary);
+  }
+}

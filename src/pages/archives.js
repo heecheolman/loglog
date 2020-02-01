@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostGroup from '../components/post-group'
 import postGroupByDate from '../services/post-group-by-date'
-import PostListTemplate from '../components/templates/post-list-template'
 
 const Archives = ({ data }) => {
   const {
@@ -16,7 +15,15 @@ const Archives = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home"/>
-      <PostListTemplate postEntries={postEntries} />
+      {
+        postEntries.map(([title, postList]) =>
+          <PostGroup
+            key={title}
+            title={title}
+            postList={postList}
+          />
+        )
+      }
     </Layout>
   )
 }

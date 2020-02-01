@@ -8,13 +8,13 @@ function Gnb ({ siteTitle = '' }) {
     <nav className="gnb">
       <div className="inner-gnb">
         <div className="title-wrap">
-          <span>{siteTitle}</span>
+          <Link to="/">{siteTitle}</Link>
           <Toggle />
         </div>
         <div className="category-wrap">
           <Link to="/" activeClassName="link-active">홈</Link>
           <Link to="/archives" activeClassName="link-active">아카이브</Link>
-          <Link to="/resume"  activeClassName="link-active">이력서</Link>
+          {/*<Link to="/resume"  activeClassName="link-active">이력서</Link>*/}
         </div>
       </div>
     </nav>

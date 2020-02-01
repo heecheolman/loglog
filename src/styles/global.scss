@@ -8,6 +8,8 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   width: 100%;
   height: 100%;
@@ -25,7 +27,7 @@ body {
   --card-bg: #fff;
   --textQuote: #8B93AC;
   --textQuoteBg: #F3F4F6;
-  --dividerBg: #e3e3e3;
+  --dividerBg: #E2E3EB;
 
   background-color: var(--bg);
 
@@ -43,7 +45,7 @@ body.dark {
 
   --textQuote: rgb(137, 143, 164);
   --textQuoteBg: rgb(59, 65, 91);
-  --dividerBg: rgba(227, 227, 227, 0.21);
+  --dividerBg: #9DA3B9;
 }
 
 a {

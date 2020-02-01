@@ -1,12 +1,16 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import ProfileCard from '../components/profile-card'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 const IndexPage = () => {
+  const { timeline } = useSiteMetadata();
   return (
     <Layout>
       <SEO title="Home"/>
+      <ProfileCard timeline={timeline} />
     </Layout>
   )
 }

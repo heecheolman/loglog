@@ -1,0 +1,35 @@
+@import './../styles/mixins';
+
+.profile-card {
+  @include card();
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 120px;
+      background-color: var(--textWeak);
+    }
+  }
+
+  .body {
+    width: 100%;
+
+    p {
+      max-width: 300px;
+      margin: 20px auto;
+      font-size: 13px;
+      line-height: 200%;
+      color: var(--textWeak);
+    }
+
+    .reference {
+      text-align: right;
+    }
+  }
+}

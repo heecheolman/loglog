@@ -1,8 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: `heecheolman`,
-    description: `heecheolman 블로그`,
+    description: `새롭게 배우는것에 거리낌이 없는 개발자 김희철입니다. Specialist 보다는 Generalist 가 되고싶고, 배운것에 대해 기록해 경험을 공유하고 싶습니다.`,
     author: `heecheolman`,
+    timeline: [
+      {
+        date: '2019.01',
+        thumbnail: 'bznav.png',
+        title: '에멘탈',
+        major: `프론트엔드`,
+        description: `<a href="https://emmental.co.kr">에멘탈</a>의 프론트엔드 직군으로 입사해 Angular, Typescript 를 이용해 <a href="https://bznav.com" target="_blank">비즈넵</a> 서비스를 개발하고 있습니다.`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -66,6 +75,15 @@ module.exports = {
           },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-reading-time`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 200,
+            },
+          }
         ],
       },
     },
@@ -74,12 +92,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `heecheolman`,
+        short_name: `heecheolman`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#578CDC`,
+        theme_color: `#578CDC`,
+        display: `heecheolman`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },

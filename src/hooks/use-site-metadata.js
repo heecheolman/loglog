@@ -9,6 +9,13 @@ export const useSiteMetadata = () => {
             title
             description
             author
+            timeline {
+              date
+              title
+              description
+              major
+              thumbnail
+            }
           }
         }
       }

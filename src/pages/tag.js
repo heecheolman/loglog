@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import postGroupByDate from '../services/post-group-by-date'
 import TagLabel from '../components/tag-label'
-import PostListTemplate from '../components/templates/post-list-template'
+import PostGroup from '../components/post-group'
 
 function Tag ({ data, pageContext }) {
   const {
@@ -19,7 +19,15 @@ function Tag ({ data, pageContext }) {
       <div style={{marginBottom: "10px"}}>
         <TagLabel label={pageContext.tagName} />
       </div>
-      <PostListTemplate postEntries={postEntries} />
+      {
+        postEntries.map(([title, postList]) =>
+          <PostGroup
+            key={title}
+            title={title}
+            postList={postList}
+          />
+        )
+      }
     </Layout>
   )
 }
