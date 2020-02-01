@@ -18,7 +18,7 @@ function ProfileCard ({ timeline }) {
           {site.description}
         </p>
         <div className="reference">
-          <a href="https://github.com/heecheolman" target="_blank">Github</a>
+          <a href="https://github.com/heecheolman" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
       </div>
       <Divider />

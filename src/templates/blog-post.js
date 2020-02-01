@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import './blog-post.scss';
 import TagLabel from '../components/tag-label'
 import Divider from '../components/divider'
-
+import { graphql } from 'gatsby'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
@@ -58,7 +58,6 @@ export const pageQuery = graphql`
           text
         }
       }
-      tableOfContents
     }
   }
 `
