@@ -4,7 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require('path')
+const path = require('path');
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -18,6 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               title
               path
+              draft
             }
           }
         }
@@ -41,11 +44,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (isProduction && node.frontmatter.draft) {
+      return;
+    }
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {}, // additional data can be passed via context
-    })
+    });
   });
 
   /*
