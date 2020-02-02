@@ -35,7 +35,11 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "chalk": "3.0.0",
+    "date-fns": "^2.9.0",
+    "gray-matter": "^4.0.2",
+    "inquirer": "7.0.4",
+    "prettier": "1.19.1"
   },
   "keywords": [
     "gatsby",
@@ -46,6 +50,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "post": "node ./cli/new-post.js",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
