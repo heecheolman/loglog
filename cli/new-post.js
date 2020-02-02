@@ -23,7 +23,7 @@ const getFrontmatter = ({
   .stringify({
     content: '\n```toc\n```\n\n ## 글을 작성해주세요.'
   }, {
-    path: `/${fileName}`,
+    path: `/post/${fileName}`,
     title,
     author,
     date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
