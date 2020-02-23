@@ -1,5 +1,5 @@
 ---
-path: /post/swift-autolayout1
+path: /post/swift-autolayout-첫번째
 title: Swift AutoLayout 첫번째
 author: 김희철
 date: 2020-02-17 23:06:19
