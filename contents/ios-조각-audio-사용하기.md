@@ -1,13 +1,13 @@
 ---
-path: /post/ios
-title: iOS 조각 Audio 사용하기
+path: /post/ios-조각-audio-사용하기
+title: iOS 조각 - Audio 사용하기
 author: KimHeeCheol
 date: '2020-03-15 14:09:07'
 tags:
   - ios
   - swift
   - ios조각
-draft: true
+draft: false
 ---
 
 ```toc
