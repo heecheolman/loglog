@@ -103,3 +103,7 @@ Bundle 은 앱의 정보나 파일들을 한 공간의 그룹화해서 저장한
 
 현재 실행파일이 포함 된 번들 객체를 반환합니다. 그리고 `.url` 을 통해 파일을 찾습니다. url 의 첫번째 인자로 찾으려는 파일의 '이름' 을 넣고 두번째 인자는 찾으려는 파일의 '확장자명' 을 넣어줍니다. 그 결과값은 string 타입의 경로가 반환됩니다. 
 
+
+## 참고문서
+
+* [Apple Developer Documentation](https://developer.apple.com/documentation/)
