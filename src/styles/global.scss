@@ -28,6 +28,8 @@ body {
   --textQuote: #8B93AC;
   --textQuoteBg: #F3F4F6;
   --dividerBg: #E2E3EB;
+  --codeBg: #dfedfb;
+  --codeColor: #3d3d3d;
 
   background-color: var(--bg);
 
@@ -36,6 +38,8 @@ body {
 body.dark {
   -webkit-font-smoothing: antialiased;
   --bg: #1C1E2A;
+  --codeBg: #898FA4;
+  --codeColor: #000;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textWeak: #9DA3B9;
   --textTitle: #f9f9f9;
