@@ -28,7 +28,7 @@ const getFrontmatter = ({
     author,
     date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
     tags: tags.split(',').map(tag => tag.toString().trim().toLowerCase()),
-    draft: false,
+    draft: true,
   });
 
 const questions = [
