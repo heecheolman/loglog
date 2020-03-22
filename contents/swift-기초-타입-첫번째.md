@@ -1,6 +1,6 @@
 ---
-path: /post/swift기초-변수와-상수-타입1
-title: Swift기초 - 변수와 상수, 타입 첫번째
+path: /post/swift-기초-타입1
+title: Swift 기초 - 타입 첫번째
 author: 김희철
 date: '2020-03-20 21:12:32'
 tags:
