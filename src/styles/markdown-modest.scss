@@ -6,6 +6,7 @@
     border-radius: 2px;
     background-color: var(--textQuoteBg);
     position: relative;
+    margin-bottom: 40px;
 
     ul:first-child {
       padding: 0;
@@ -44,16 +45,22 @@
     font-weight: 700;
   }
   h2 {
-    margin-top: 50px;
-    margin-bottom: 32px;
-    font-size: 2.2rem;
+    margin-top: 73px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    //margin-top: 50px;
+    //margin-bottom: 32px;
+    //font-size: 2.2rem;
     font-weight: 700;
     border-bottom: 3px solid var(--textQuoteBg);
     padding-bottom: 15px;  }
   h3 {
     margin-top: 32px;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
+    margin-bottom: 24px;
+    font-size: 20px;
+    //margin-top: 32px;
+    //margin-bottom: 20px;
+    //font-size: 1.4rem;
     font-weight: 700;
   }
   h4 {
@@ -80,9 +87,11 @@
   }
 
   p {
-    line-height: 180%;
-    text-align: justify;
-    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 24px;
+    line-height: 160%;
+    //text-align: justify;
+    font-size: 16px;
   }
 
   img {
