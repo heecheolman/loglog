@@ -23,6 +23,16 @@ export default function Template({ data }) {
           <Divider type="vertical" />
           <span>{post.fields.readingTime.text}</span>
         </div>
+        <div className="tag-section">
+          {
+            post.frontmatter.tags.map((tag, index) =>
+              <TagLabel
+                key={index}
+                label={tag}
+              />
+            )
+          }
+        </div>
         <Divider />
         <div
           className="markdown-content"
