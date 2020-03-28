@@ -16,6 +16,12 @@
       margin: 0;
       padding-left: 20px;
       list-style: none;
+      li {
+        * {
+          font-size: 14px;
+        }
+      }
+
 
       //li {
       //  ul {
