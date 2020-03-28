@@ -23,6 +23,8 @@ draft: false
 
 `add` 라는 함수를 `someAdd` 상수에 다시 할당했습니다. 정의된 함수를 변수나 상수에 할당함으로서 새로 할당된 함수는 완전히 동일하게 기존 함수처럼 사용할 수 있습니다. 
 
+> 클로저에서 한번 다루겠지만, 변수나 상수에 할당하게되면 참조타입으로 할당됩니다.
+
 ```swift
 func add(a: Int, b: Int) -> Int {
     return a + b
@@ -35,24 +37,27 @@ someAdd(1, 2) // 3
 
 ### 함수를 파라미터값으로 전달 가능
 
-함수를 다른함수의 파라미터로 전달해 줄 수 있습니다. 다음 코드는 데이터를 받은 이후 실행할 함수를 파리미터로 넘겨주고, 데이터를 받았을 때 성공한 함수를 실행하는 간단한 코드입니다.
+함수를 다른함수의 파라미터로 전달해 줄 수 있습니다.
 
 ```swift
-func successCallback() {
-    print("success")
+func b() {
+    print("b called")
 }
 
-func getData(_ successCallback: () -> Void) {
-    print("getData")
-    successCallback()
+func a(_ b: () -> Void) {
+    print("a called")
+    b()
 }
 
-getData(successCallback)
+a(b)
 /*
-    getData
-    success
+   a called
+   b called
 */
+
 ```
+
+> 자세한건 클로져에서 다룹니다
 
 ### 반환값으로 전달 가능
 
