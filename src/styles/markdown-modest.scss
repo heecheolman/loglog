@@ -167,6 +167,10 @@
     background-color: var(--dividerBg);
   }
 
+  pre {
+    border-radius: 2px;
+  }
+
   :not(pre) > code[class*="language-"] {
     padding: .2em .4em;
     margin: 0;
