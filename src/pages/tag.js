@@ -16,7 +16,7 @@ function Tag ({ data, pageContext }) {
   return (
     <Layout>
       <SEO title={pageContext.tagName} />
-      <div style={{marginBottom: "10px"}}>
+      <div>
         <TagLabel label={pageContext.tagName} />
       </div>
       {

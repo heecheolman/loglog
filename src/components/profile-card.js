@@ -8,7 +8,7 @@ function ProfileCard ({ timeline }) {
   const site = useSiteMetadata();
   return (
     <div className="profile-card">
-      <div className="card-title">프로필</div>
+      <h2>프로필</h2>
       <div className="header">
         <div className="profile-image">
         </div>

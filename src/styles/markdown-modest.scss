@@ -1,12 +1,72 @@
+@import './mixins.scss';
+
+
+h1 {
+  margin-top: 40px;
+  margin-bottom: 36px;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3.75rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+h2:first-of-type {
+  padding-top: 1rem;
+}
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 2.2rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+h5 {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+h6 {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .markdown-content {
   font-weight: 300;
+  word-break: break-all;
 
   .toc {
-    padding: 20px;
-    border-radius: 2px;
-    background-color: var(--textQuoteBg);
-    position: relative;
-    margin-bottom: 40px;
+    position: fixed;
+    max-width: 200px;
+    top: 120px;
+    padding: 0 0.75rem;
+    color: var(--textWeak);
+    border-left: 2px solid var(--textWeak);
+
+    @include forToc() {
+      display: none;
+    }
+
+    @include forDesktop2() {
+      right: 10px;
+    }
+
+    @include forDesktop3() {
+      right: 10%;
+    }
 
     ul:first-child {
       padding: 0;
@@ -14,34 +74,18 @@
 
     ul {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 15px;
       list-style: none;
+      line-height: 1.5;
 
       li {
-        font-size: 14px;
+        line-height: 1.5;
         * {
-          font-size: 14px;
+          line-height: 1.5;
+          color: var(--textWeak);
+          font-size: 0.7rem;
         }
       }
-
-
-      //li {
-      //  ul {
-      //    li {
-              //&:before {
-              //  display: inline-block;
-              //  content: ' ';
-              //  width: 3px;
-              //  height: 3px;
-              //  margin-bottom: 4px;
-              //  margin-right: 10px;
-              //  border-radius: 50%;
-              //  background-color: var(--primary);
-              //}
-          //}
-      //  }
-      //}
-
     }
 
   }
@@ -51,43 +95,49 @@
     margin-bottom: 36px;
     font-size: 2.6rem;
     font-weight: 700;
+    color: var(--textNormal);
   }
   h2 {
-    margin-top: 73px;
-    margin-bottom: 24px;
-    font-size: 24px;
-    //margin-top: 50px;
-    //margin-bottom: 32px;
-    //font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 3.75rem;
+    font-size: 2.4rem;
     font-weight: 700;
-    border-bottom: 3px solid var(--textQuoteBg);
-    padding-bottom: 15px;  }
+    color: var(--textNormal);
+  }
+  h2:first-of-type {
+    padding-top: 1rem;
+    color: var(--textNormal);
+  }
   h3 {
-    margin-top: 32px;
-    margin-bottom: 24px;
-    font-size: 20px;
-    //margin-top: 32px;
-    //margin-bottom: 20px;
-    //font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 2.2rem;
+    font-size: 1.9rem;
     font-weight: 700;
+    color: var(--textNormal);
   }
   h4 {
-    margin-top: 28px;
-    margin-bottom: 24px;
-    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    color: var(--textNormal);
   }
   h5 {
     margin-top: 24px;
     margin-bottom: 20px;
     font-size: 1.1rem;
     font-weight: 700;
+    color: var(--textNormal);
   }
   h6 {
     margin-top: 20px;
     margin-bottom: 16px;
     font-size: 1rem;
     font-weight: 400;
+    color: var(--textNormal);
   }
 
   strong {
@@ -95,11 +145,11 @@
   }
 
   p {
-    margin-top: 0;
-    margin-bottom: 24px;
-    line-height: 160%;
+    margin-top: 0.8rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: var(--textNormal);
     //text-align: justify;
-    font-size: 16px;
   }
 
   img {
@@ -142,11 +192,16 @@
   }
 
   ul, ol {
+    margin-top: 0.95rem;
+    margin-left: 1.1rem;
+    font-size: 1rem;
     line-height: 200%;
+    padding: 0;
 
     li {
       margin: 0;
-      font-size: 16px;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     p {
@@ -157,13 +212,19 @@
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    padding: 12px 15px;
+    padding: 15px 30px;
     background-color: var(--textQuoteBg);
-    box-shadow: inset 2px 0 0 0 var(--textQuote);
+    box-shadow: inset 3px 0 0 0 var(--primary);
+
+    // margin-left: 0;
+    // margin-right: 0;
+    // padding: 12px 15px;
+    // background-color: var(--textQuoteBg);
+    // box-shadow: inset 2px 0 0 0 var(--textQuote);
 
     p {
       margin: 0;
-      color: var(--textQuote);
+      color: var(--textNormal);
       font-weight: 300;
     }
   }

@@ -2,7 +2,6 @@
 
 .post-group {
   @include card();
-  padding: 15px;
 
   > ul {
     margin: 0;
@@ -15,7 +14,7 @@
       a {
         @include link();
         position: relative;
-        padding-left: 75px;
+        padding-left: 100px;
 
         .post-date {
           position: absolute;

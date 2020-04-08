@@ -42,7 +42,7 @@ module.exports = {
               exclude: "Table of Contents",
               tight: false,
               fromHeading: 2,
-              toHeading: 4,
+              toHeading: 3,
             },
           },
           {
@@ -83,7 +83,6 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 500,
             },
           }
         ],

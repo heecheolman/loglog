@@ -2,14 +2,9 @@
 
 .tag-label {
   display: inline-block;
-  padding: 4px 9px;
-  border: 1px solid var(--card-box-shadow);
-  background-color: var(--card-bg);
-
-  //@include link();
-  border-radius: 4px;
+  font-size: 2rem;
 }
 
 .tag-label + .tag-label {
-  margin-left: 10px;
+  margin-left: 20px;
 }

@@ -9,10 +9,10 @@
   margin: 0 auto;
 
   @include forMobile {
-    padding: 5px;
+    padding: 20px;
   }
   @include forTablet {
-    padding: 10px;
+    padding: 20px;
   }
 
   section {

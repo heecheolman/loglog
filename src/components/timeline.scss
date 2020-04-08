@@ -10,7 +10,7 @@ $timelineSymbolSize: 10px;
   width: 100%;
   height: $timelineHeight;
   align-items: center;
-  padding-left: 80px;
+  padding-left: 100px;
 
   .timeline-content {
     display: block;
@@ -28,24 +28,24 @@ $timelineSymbolSize: 10px;
       }
 
       .title {
-        font-size: 13px;
+        font-size: 1rem;
         font-weight: bold;
         color: var(--textNormal);
       }
       .major {
-        font-size: 13px;
+        font-size: 1rem;
         color: var(--textNormal);
       }
 
     }
     .timeline-major {
-      font-size: 12px;
+      font-size: 1rem;
       font-weight: normal;
       color: var(--textNormal);
       margin-bottom: 8px;
     }
     .timeline-description {
-      font-size: 12px;
+      font-size: 0.9rem;
       color: var(--textWeak);
     }
   }
@@ -74,7 +74,7 @@ $timelineSymbolSize: 10px;
   }
 
   .date {
-    font-size: 11px;
+    font-size: 1rem;
     position: absolute;
     color: var(--primary);
     left: 20px;

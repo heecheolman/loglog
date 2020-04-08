@@ -5,9 +5,7 @@ import './post-group.scss';
 function PostGroup ({ title = '', postList = [] }) {
   return (
     <div className="post-group">
-      <div className="card-title">
-        <span>{title}</span>
-      </div>
+      <h2 className="card-title">{title}</h2>
       <ul>
         {
           postList.map((post, index) => {

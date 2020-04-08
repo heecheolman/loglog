@@ -8,21 +8,12 @@
 }
 
 @mixin card {
-  background-color: var(--card-bg);
+  background-color: var(--bg);
   transition: $transition-duration $transition-function;
-  padding: 10px 15px;
-  border-radius: 4px;
-  box-shadow: 0 0 4px 0 var(--card-box-shadow);
+  // box-shadow: 0 0 4px 0 var(--card-box-shadow);
   color: var(--textTitle);
 
   .card-title {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    color: var(--textTitle);
-    pointer-events: none;
-    font-size: 18px;
-    margin-bottom: 10px;
 
     .card-title-icon {
       display: inline-flex;
@@ -66,8 +57,20 @@
   }
 }
 
-@mixin forDesktop {
-  @media screen and (min-width: $tablet-upper-boundary) {
+@mixin forToc {
+  @media screen and (max-width: 1230px) {
+    @content
+  }
+}
+
+@mixin forDesktop2 {
+  @media screen and (min-width: 1230px) {
+    @content
+  }
+}
+
+@mixin forDesktop3 {
+  @media screen and (min-width: 1600px) {
     @content
   }
 }

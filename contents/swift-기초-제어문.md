@@ -13,9 +13,9 @@ draft: false
 
 반복및 조건에 들어가기 앞서 **nil 병합 연산자** 와 **범위 연산자**에 대해 짚고 가겠습니다. 연산자이지만 제어와 더 가깝다고 생각해 이 파트에 넣었습니다.
 
-## nil 병합 연산자(Nil-Coalescing Operator)
+## nil 병합 연산자
 
-`nil` 병합 연산자는 옵셔널 값이 `nil` 인지 여부에 따라 분기합니다. `??` 키워드를 이용합니다.
+`nil` 병합 연산자(Nil-Coalescing Operator)는 옵셔널 값이 `nil` 인지 여부에 따라 분기합니다. `??` 키워드를 이용합니다.
 
 ```swift
 /*   
@@ -26,9 +26,9 @@ var foo = a ?? b // 아래의 코드와 동일
 var foo = a != nil ? a! : b
 ```
 
-## 범위 연산자(Range Operators)
+## 범위 연산자
 
-### 닫힌 범위 연산자(Closed Range Operator)
+### 닫힌 범위 연산자
 
 `n...m` 으로 n 부터 m 까지 반복하라는 연산자입니다. (n포함, m포함)
 
@@ -43,7 +43,7 @@ for index in 1...3 {
 */
 ```
 
-### 반 닫힌 범위 연산자(Half-Open Range Operator)
+### 반 닫힌 범위 연산자
 
 `n..<m` 으로 n 부터 m-1 까지의 범위를 갖습니다. 배열을 순회하는데 자주 쓰입니다.
 
@@ -60,7 +60,7 @@ for index in 0..<nameList.count {
 */
 ```
 
-### 단방향 범위 연산자(One-Side Operator)
+### 단방향 범위 연산자
 
 시작이나 끝의 범위만 지정해준 범위 연산자입니다. `[..n]` 또는 `[n..]` 과 같이 기술합니다.
 
@@ -383,7 +383,7 @@ case let (x, y):
 ```
 
 
-## 제어 전송 구문 (Control Transfer Statements)
+## 제어 전송 구문 
 
 제어 전송 구문은 반복이나 조건문에서 코드의 흐름을 바꾸기위해 사용하는 구문입니다.
 
@@ -535,7 +535,7 @@ greet(person: ["name": "Jane", "location": "Cupertino"])
 // Prints "I hope the weather is nice in Cupertino."
 ```
 
-## 이용 가능한 API 버젼 확인(Checking API Availability)
+## 이용 가능한 API 버젼 확인
 
 스위프트에서는 플랫폼과 플랫폼 버전을 확인할 수 있게 문법적으로 제공해줍니다. asterisk(`*`) 는 와일드카드로 작동되며, 그 외 모든 플랫폼 및 버전임을 나타냅니다.
 
@@ -557,7 +557,7 @@ if #available(iOS 10, macOS 10.12, *) {
 }
 ```
 
-## 참고문서 
+## 참고문서
 
 * [Swift 문서](https://swift.org/)
 * [The Swift Language Guide - 한국어](https://jusung.gitbook.io/the-swift-language-guide/)
