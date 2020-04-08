@@ -4,9 +4,9 @@ const postGroupByDate = (postList, dateGroup) => {
   };
 
   dateGroup.forEach(({ fieldValue: date }) => {
-    const dateKey = new Date(date).getFullYear();
-    if (!groupByYearPostGroup.hasOwnProperty(dateKey)) {
-      groupByYearPostGroup[dateKey] = [];
+    const [year] = new Date(date).toLocaleDateString().split('.');
+    if (!groupByYearPostGroup.hasOwnProperty(year)) {
+      groupByYearPostGroup[year] = [];
     }
   });
 
