@@ -26,6 +26,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.7",
+    "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.19.0",
@@ -36,7 +37,6 @@
   },
   "devDependencies": {
     "chalk": "3.0.0",
-    "date-fns": "^2.9.0",
     "gray-matter": "^4.0.2",
     "inquirer": "7.0.4",
     "prettier": "1.19.1"
