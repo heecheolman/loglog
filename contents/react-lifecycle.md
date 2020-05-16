@@ -2,13 +2,14 @@
 path: /post/react-life-cycle
 title: React 라이프사이클
 author: 김희철
-date: '2020-04-06 21:25:54'
+date: "2020-04-06 21:25:54"
 tags:
-  - 'React'
+  - "react"
 draft: false
 ---
 
 ```toc
+
 ```
 
 ## 리액트
@@ -16,8 +17,6 @@ draft: false
 현대의 웹은 사용자와의 상호작용이 많아져 단순한 '문서(Document)' 로서의 역할이 아닌 '웹 애플리케이션' 이 되었습니다. 웹 애플리케이션은 사용자와 상호작용이 많고 이에 따라 많은 상태나 이벤트등을 통해 DOM에 대한 업데이트가 빈번하게 일어나기때문에 브라우저의 성능에 문제가 발생할 수 있고, 애플리케이션 복잡도가 증가하면 여러 상태를 관리해야하는데 이는 쉬운 일이 아닙니다.
 
 리액트는 가상돔(Virtual DOM) 을 이용하는데 간단히 설명하면 기존의 DOM을 추상화하여 복제시킨 DOM을 말합니다. 뷰에 변화가 있을 때 DOM 에 적용되기 전에 가상돔에 먼저 적용시키고 최종적인 변경사항을 실제 DOM 에 적용시켜 브라우저 렌더링 횟수를 줄여 성능향상에 도움을 줍니다.
-
-
 
 ## 라이프사이클
 
@@ -41,28 +40,27 @@ constructor 에서 주로 하는 작업은 다음과 같습니다.
 2. 인스턴스에 이벤트 메서드 바인딩
 
 ```jsx
-import React from 'react';
+import React from "react"
 
 class Box extends React.Component {
-
-    constructor(props) {
-        super(props);
-        /* 1. state 초기화 */
-        this.state = {
-          // ...
-        };
-
-        /* 2. 인스턴스에 이벤트 메서드 바인딩 */
-        this.onClick = this.onClick.bind(this);
+  constructor(props) {
+    super(props)
+    /* 1. state 초기화 */
+    this.state = {
+      // ...
     }
 
-    // 이벤트 메서드
-    onClick() {
-      console.log(this);
-    }
+    /* 2. 인스턴스에 이벤트 메서드 바인딩 */
+    this.onClick = this.onClick.bind(this)
+  }
+
+  // 이벤트 메서드
+  onClick() {
+    console.log(this)
+  }
 }
 
-export default Box;
+export default Box
 ```
 
 인스턴스 이벤트 메서드는 별도의 this 바인딩 작업이 필요합니다. 바인딩을 하지 않으면 render 이후에 올라간 DOM 에서의 함수 호출에서 this 는 해당 컴포넌트의 인스턴스를 가리키지 않기 때문에 `undefined` 가 값으로 오고 이는 에러로 이어집니다.
@@ -101,9 +99,9 @@ class SomeComponent extends React.component {
 최초 생성시와 업데이트시 사용되는 메서드이며, static 이기때문에 this 를 사용할 수 없습니다. 렌더링 될 때마다 매번 실행되므로 유의하여 컴포넌트를 작성해야합니다.
 getDerivedStateFromProps 는 props 에 의해 state 가 변경되어야 할 경우인데, 드물게 사용한다고 합니다. 이 라이프사이클 이벤트를 사용하는 경우라면 다음과 같은 경우인지 확인하고, 다른 대안으로 작성하는것을 권장합니다.
 
-* props 변화에 의한 부수효과가 필요한 경우 componentDidUpdate 를 이용합니다.
-* props 가 변화했을 때 특정 데이터를 다시 계산하고 싶다면 [Memoization Helper](https://ko.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization)를 이용합니다.
-* props 가 변화할 때 일부 state 를 재설정 하고 싶다면, UnControlled Component 와 Controlled Component 로 만들어서 사용합니다.
+- props 변화에 의한 부수효과가 필요한 경우 componentDidUpdate 를 이용합니다.
+- props 가 변화했을 때 특정 데이터를 다시 계산하고 싶다면 [Memoization Helper](https://ko.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization)를 이용합니다.
+- props 가 변화할 때 일부 state 를 재설정 하고 싶다면, UnControlled Component 와 Controlled Component 로 만들어서 사용합니다.
 
 #### render()
 
@@ -123,7 +121,7 @@ render 함수는 호출될 때마다 동일한 결과를 반환해야 합니다.
 
 ### 업데이트
 
-컴포넌트가 생성되고, props 또는 state 가 업데이트될 때 발생합니다. 
+컴포넌트가 생성되고, props 또는 state 가 업데이트될 때 발생합니다.
 
 #### UNSAFE_componentWillReceiveProps(nextProps): 제거 예정
 
@@ -151,7 +149,7 @@ render 함수는 호출될 때마다 동일한 결과를 반환해야 합니다.
 
 #### componentDidUpdate(prevProps, prevState, snapshot)
 
-최초 렌더링시에는 호출되지 않고, 업데이트가 일어난 직후에 발생하는 이벤트입니다. DOM 조작이나 이전 props 와 비교해 네트워크 요청을 보낼지 결정하기에 좋은 위치입니다. 
+최초 렌더링시에는 호출되지 않고, 업데이트가 일어난 직후에 발생하는 이벤트입니다. DOM 조작이나 이전 props 와 비교해 네트워크 요청을 보낼지 결정하기에 좋은 위치입니다.
 
 컴포넌트에서 getSnapshotBeforeUpdate 를 구현했다면 getSnapshotBeforeUpdate 의 return 값을 세번째 파라미터인 snapshot 으로 가져 올 수 있습니다.
 
@@ -168,22 +166,24 @@ render 함수는 호출될 때마다 동일한 결과를 반환해야 합니다.
 위의 `UNSAFE_` 가 붙은 라이프사이클은 16.3 이후 부터 deprecated 되기 때문이고, 아래의 요약은 16.4 이후부터 적용되는 일련의 과정입니다.
 
 1. **마운트**
-    * constructor
-    * static getDerivedStateFromProps
-    * componentDidMount
+
+   - constructor
+   - static getDerivedStateFromProps
+   - componentDidMount
 
 2. **업데이트**
-    * static getDerivedStateFromProps
-    * shouldComponentUpdate
-    * render
-    * getSnapshotBeforeUpdate
-    * componentDidUpdate
+
+   - static getDerivedStateFromProps
+   - shouldComponentUpdate
+   - render
+   - getSnapshotBeforeUpdate
+   - componentDidUpdate
 
 3. **마운트 해제**
-    * componentWillUnmount
+   - componentWillUnmount
 
 > 16.3 에서 static getDerivedStateFromProps 훅은 setState() 나 forceUpdate() 시엔 발생되지 않지만 16.4 부터는 발생합니다.
 
 ## 참고문서
 
-* [React](https://ko.reactjs.org/docs/react-component.html)
+- [React](https://ko.reactjs.org/docs/react-component.html)
