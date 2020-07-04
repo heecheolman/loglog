@@ -85,6 +85,12 @@ module.exports = {
               // base for generating different widths of each image.
             },
           },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: `${__dirname}/contents/gif`,
+            },
+          },
         ],
       },
     },
@@ -166,5 +172,19 @@ module.exports = {
         respectDNT: true,
       },
     },
+    // `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: 'gatsby-remark-copy-linked-files',
+    //         // options: {
+    //         //   destinationDir: `${__dirname}/contents/gif`,
+    //         // },
+    //       },
+    //     ],
+    //   },
+    // },
   ],
 }
