@@ -39,7 +39,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
-              exclude: "Table of Contents",
+              exclude: 'Table of Contents',
               tight: false,
               fromHeading: 2,
               toHeading: 3,
@@ -48,15 +48,15 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
               languageExtensions: [
                 {
-                  language: "superscript",
-                  extend: "javascript",
+                  language: 'superscript',
+                  extend: 'javascript',
                   definition: {
                     superscript_types: /(SuperType)/,
                   },
@@ -68,12 +68,12 @@ module.exports = {
                 },
               ],
               prompt: {
-                user: "root",
-                host: "localhost",
+                user: 'root',
+                host: 'localhost',
                 global: false,
               },
               escapeEntities: {},
-            }
+            },
           },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-reading-time`,
@@ -84,7 +84,7 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
             },
-          }
+          },
         ],
       },
     },
@@ -133,18 +133,20 @@ module.exports = {
               changefreq: `daily`,
               priority: 0.7,
             }
-          })
-      }
+          }),
+      },
     },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://heecheolman.dev`,
         sitemap: `https://heecheolman.dev/sitemap.xml`,
-        policy: [{
-          userAgent: '*',
-          allow: '/',
-        }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+          },
+        ],
       },
     },
     {
@@ -163,7 +165,6 @@ module.exports = {
         anonymize: true,
         respectDNT: true,
       },
-    }
+    },
   ],
-
 }

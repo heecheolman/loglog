@@ -2,7 +2,7 @@
 path: /post/react-hooks
 title: React Hooks
 author: 김희철
-date: "2020-05-03 21:54:35"
+date: '2020-05-03 21:54:35'
 tags:
   - react
 draft: false
@@ -71,10 +71,10 @@ const [state, setState] = useState(() => { ... })
 #### 기본 예제 코드
 
 ```jsx
-import { useState } from "react"
+import { useState } from 'react'
 
 const SomeComponent = () => {
-  const [text, setText] = useState("")
+  const [text, setText] = useState('')
   return <input value={text} onChange={e => setText(e.target.value)} />
 }
 
@@ -84,7 +84,7 @@ export default SomeComponent
 ### useEffect
 
 ```jsx
-import React from "react"
+import React from 'react'
 
 useEffect(didUpdate)
 ```
@@ -102,13 +102,13 @@ useEffect는 클래스 컴포넌트에서 사용하던 `componentDidMount`, `com
   render
   useEffect
 */
-import React, { useEffect } from "react"
+import React, { useEffect } from 'react'
 
 const SomeComponent = () => {
   useEffect(() => {
-    console.log("useEffect")
+    console.log('useEffect')
   })
-  console.log("render")
+  console.log('render')
   return <div>render</div>
 }
 
@@ -121,7 +121,7 @@ useEffect는 두 번째 인자로 의존성을 갖는 값을 배열로 넣어줄
 
 ```jsx
 useEffect(() => {
-  console.log("useEffect")
+  console.log('useEffect')
 }, [dep1, dep2])
 // dep1, dep2 중 하나라도 값이 변경된다면 effect 실행
 ```

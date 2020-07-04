@@ -2,9 +2,9 @@
 path: /post/react-life-cycle
 title: React 라이프사이클
 author: 김희철
-date: "2020-04-06 21:25:54"
+date: '2020-04-06 21:25:54'
 tags:
-  - "react"
+  - 'react'
 draft: false
 ---
 
@@ -40,7 +40,7 @@ constructor 에서 주로 하는 작업은 다음과 같습니다.
 2. 인스턴스에 이벤트 메서드 바인딩
 
 ```jsx
-import React from "react"
+import React from 'react'
 
 class Box extends React.Component {
   constructor(props) {

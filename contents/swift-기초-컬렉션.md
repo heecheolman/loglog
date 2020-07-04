@@ -2,22 +2,23 @@
 path: /post/swift-기초-컬렉션
 title: Swift 기초 - 컬렉션
 author: 김희철
-date: '2020-03-22 20:59:11'
+date: "2020-03-22 20:59:11"
 tags:
   - swift
-draft: false
+draft: true
 ---
 
 ```toc
+
 ```
 
-Swift 에서는 콜렉션 타입으로 세가지가 있습니다. 
+Swift 에서는 콜렉션 타입으로 세가지가 있습니다.
 
 ![Collection-Swift](./images/swift-collection.png)
 
 ## Array
 
-같은 데이터타입을 순차적으로 나열한 방식입니다. 
+같은 데이터타입을 순차적으로 나열한 방식입니다.
 
 ### 배열의 초기화
 
@@ -25,7 +26,7 @@ Swift 에서는 콜렉션 타입으로 세가지가 있습니다.
 
 ```swift
 var nameList: [String] = [String]()
-var nameList2: Array<String> = Array<String>() 
+var nameList2: Array<String> = Array<String>()
 ```
 
 ### repeating 과 count 를 이용한 배열 생성
@@ -46,7 +47,6 @@ print(nameList)
 var list: [String] = ["a", "b", "c", "d"]
 ```
 
-
 ### 배열의 합성
 
 같은 타입으로 정의된 배열끼리 `+` 연산자를 통해 합쳐진 새로운 배열을 얻어낼 수 있습니다.
@@ -58,7 +58,7 @@ print(list1 + list2)
 // [1, 1, 1, 1, 2, 2, 2, 2]
 ```
 
-### 배열의 길이 확인 
+### 배열의 길이 확인
 
 `.count` 를 이용해 배열의 길이를 확인할 수 있습니다.
 
@@ -74,7 +74,7 @@ print(list.count) // 3
 ```swift
 var list: [String] = ["a", "b", "c"]
 print(list.isEmpty) // false
-```  
+```
 
 ### 배열에 요소 추가하기
 
@@ -134,13 +134,13 @@ print(list) // ["b", "c", "d", "e", "f"]
 */
     var lastEle = list.popLast()
     print(lastEle) // nil
-``` 
+```
 
 ### 배열의 순회
 
 `for in` 구문을 이용해 배열을 순회할 수 있습니다. 배열의 `index` 가 필요한경우 `.enumerated()` 메서드를 이용해 순회합니다.
 
-```swift 
+```swift
 var list = ["a", "b", "c", "d"]
 for (index, item) in list.enumerated() {
     print("index: \(index), item: \(item)")
@@ -155,12 +155,12 @@ for (index, item) in list.enumerated() {
 
 ## Set
 
-Set(집합)은 순서가 없는 중복되지 않는 값들의 컬렉션입니다. 하나의 집합에는 하나의 타입만 허용됩니다. 스위프트의 `Hashable` 프로토콜을 따르고 있어야만 Set 컬렉션으로 담을 수 있습니다. 
+Set(집합)은 순서가 없는 중복되지 않는 값들의 컬렉션입니다. 하나의 집합에는 하나의 타입만 허용됩니다. 스위프트의 `Hashable` 프로토콜을 따르고 있어야만 Set 컬렉션으로 담을 수 있습니다.
 프로토콜에 대해서는 이후에 다루도록 하겠습니다. 스위프트의 거의 모든 자료형들 (Int, Bool, String, Double) 은 `Hashable` 프르토콜을 따르고 있기 때문에 Set 으로 담아둘 수 있습니다.
 
 ### 빈 집합 생성
 
-`Set<Type>()` 을 이용해 빈 집합을 생성할 수 있습니다. `()` 괄호 안에 `[]` 배열 표현식을 넣어서도 가능합니다. 그리고 타입을 Set 으로 지정을 해줬다면 `Set<Type>` 키워드를 생략해 선언할 수 있습니다. 
+`Set<Type>()` 을 이용해 빈 집합을 생성할 수 있습니다. `()` 괄호 안에 `[]` 배열 표현식을 넣어서도 가능합니다. 그리고 타입을 Set 으로 지정을 해줬다면 `Set<Type>` 키워드를 생략해 선언할 수 있습니다.
 
 ```swift
 var stringSet: Set<String> = Set<String>()
@@ -179,7 +179,7 @@ print(set) // ["a", "b", "c"]
 
 ### 빈 집합인지 확인
 
-배열과 동일하게 `.isEmpty` 를 이용해 `Bool` 값을 얻어 낼 수 있습니다. 
+배열과 동일하게 `.isEmpty` 를 이용해 `Bool` 값을 얻어 낼 수 있습니다.
 
 ```swift
 var set: Set<String> = Set<String>(["a", "b", "c"])
@@ -198,7 +198,7 @@ print(set) // ["a"]
 
 ### 집합의 특정 요소 존재 여부
 
-집합에 특정 원소가 존재하는지 확인하는 메서드는 `.contains(_:)` 로 확인하고 return 은 `Bool` 입니다. 
+집합에 특정 원소가 존재하는지 확인하는 메서드는 `.contains(_:)` 로 확인하고 return 은 `Bool` 입니다.
 
 ```swift
 var set: Set<String> = ["a", "b", "c"]
@@ -259,10 +259,10 @@ for index in set.indices {
 
 ![집합연산 이미지](https://docs.swift.org/swift-book/_images/setVennDiagram_2x.png)
 
-* `A.intersectio(B)`: A와 B 사이의 교집합
-* `A.symmetricDifference(B)`: A와 B 사이의 차집합
-* `A.union(B)`: A와 B 의 합집합
-* `A.subtracting(b)`: A - B 집합
+- `A.intersectio(B)`: A와 B 사이의 교집합
+- `A.symmetricDifference(B)`: A와 B 사이의 차집합
+- `A.union(B)`: A와 B 의 합집합
+- `A.subtracting(b)`: A - B 집합
 
 ```swift
 var aSet: Set<String> = ["a", "b", "c", "d"]
@@ -278,10 +278,10 @@ print(aSet.subtracting(bSet)) // ["a"]
 
 ![집합동등비교 이미지](https://docs.swift.org/swift-book/_images/setEulerDiagram_2x.png)
 
-* `==`: 서로다른 집합이 같은지 확인합니다.
-* `A.isSuperset(of: B)`: A가 B를 포함하는 슈퍼셋인지 여부
-* `A.isSubSet(of: B)`: A가 B에 포함되는 서브셋인지 여부
-* `A.isDisJoint(with: B)`: A와 B가 서로 겹치지 않는지 여부 
+- `==`: 서로다른 집합이 같은지 확인합니다.
+- `A.isSuperset(of: B)`: A가 B를 포함하는 슈퍼셋인지 여부
+- `A.isSubSet(of: B)`: A가 B에 포함되는 서브셋인지 여부
+- `A.isDisJoint(with: B)`: A와 B가 서로 겹치지 않는지 여부
 
 ```swift
 var aSet: Set<String> = ["a", "b", "c", "d"]
@@ -298,7 +298,7 @@ print(bSet.isDisjoint(with: cSet)) // true
 ## Dictionary
 
 **Key-Value** 로 갖는 컬렉션 타입으로 동일한 타입의 Value 를 저장합니다. 배열과는 다르게 순서가 없는것이 특징이고 `Key` 는 스위프트의 `Hashable` 프로토콜을 따라야합니다.
- 
+
 ### 빈 사전 만들기
 
 `empty` 는 타입을 명시적으로 지정해줬고, 축약형으로 `empty2` 처럼 선언할 수 있습니다.
@@ -313,7 +313,7 @@ print(empty.count, empty2.count) // 0, 0
 
 `[Key1: Value1, Key2: Value2, Key3: Value3]` 형태로 리터럴을 갖는 사전으로 선언할 수 있습니다.
 
-이후에 별도의 타입없이 `[:]` 로 할당하면 비어있는 사전으로 초기화됩니다. 
+이후에 별도의 타입없이 `[:]` 로 할당하면 비어있는 사전으로 초기화됩니다.
 
 ```swift
 var dictionary = [
@@ -329,7 +329,7 @@ print(dictionary.count) // 0
 
 ### 사전의 값 접근
 
-`사전명[Key]` 를 이용해 `Key` 에 등록된 `Value` 를 얻어낼 수 있습니다. 
+`사전명[Key]` 를 이용해 `Key` 에 등록된 `Value` 를 얻어낼 수 있습니다.
 
 등록된 `Key` 가 있다면 옵셔널 값을 return 하고 `Key` 가 없다면 `nil` 을 return 합니다. 옵셔널 바인딩을 통해 옵셔널을 해제해줍니다.
 
@@ -346,9 +346,9 @@ if let getA = dictionary["A"] {
 print(dictionary["Z"]) // nil
 ```
 
-### 사전의 값 업데이트 
+### 사전의 값 업데이트
 
-`사전명[Key] = Value` 로 값을 업데이트하는데 이미  `Key` 가 존재한다면 `Value` 를 새로운 값으로 업데이트하고, 
+`사전명[Key] = Value` 로 값을 업데이트하는데 이미 `Key` 가 존재한다면 `Value` 를 새로운 값으로 업데이트하고,
 `Key` 가 존재하지 않다면 새로운 `Key` 에 `Value` 를 등록합니다.
 
 ```swift
@@ -364,8 +364,8 @@ print(dictionary) // ["B": "bb", "C": "c", "A": "a"]
 ```
 
 `.updateValue(_:forKey:)` 메서드를 이용해서 키를 업데이트하거나 설정할 수도 있습니다.
- 만약 키가 이미 존재한다면 이전의 값을 return 해주고, 키가 없어서 새롭게 등록했다면 `nil` 이 return 됩니다.
- 
+만약 키가 이미 존재한다면 이전의 값을 return 해주고, 키가 없어서 새롭게 등록했다면 `nil` 이 return 됩니다.
+
 ```swift
 var dictionary = [
     "A": "a",
@@ -385,7 +385,7 @@ print(oldValue2) // nil
 
 등록된 `Key` 를 제거하고싶다면 `Key` 에 해당되는 값을 `nil` 로 할당해주면 사라집니다.
 
-그리고 `removeValue(forKey:)` 메서드를 이용해 제거할 수도 있습니다. 
+그리고 `removeValue(forKey:)` 메서드를 이용해 제거할 수도 있습니다.
 메서드를 이용하면 `Key` 가 존재하는 경우 이전 값을 옵셔널로 return 해주고, `Key` 가 존재하지 않으면 `nil` 을 return 합니다.
 
 ```swift
@@ -460,5 +460,5 @@ for value in dictionary.values {
 
 ## 참고문서
 
-* [Swift 문서](https://swift.org/)
-* [The Swift Language Guide - 한국어](https://jusung.gitbook.io/the-swift-language-guide/)
+- [Swift 문서](https://swift.org/)
+- [The Swift Language Guide - 한국어](https://jusung.gitbook.io/the-swift-language-guide/)

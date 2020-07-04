@@ -5,10 +5,11 @@ author: 김희철
 date: '2020-03-25 19:09:46'
 tags:
   - swift
-draft: false
+draft: true
 ---
 
 ```toc
+
 ```
 
 반복및 조건에 들어가기 앞서 **nil 병합 연산자** 와 **범위 연산자**에 대해 짚고 가겠습니다. 연산자이지만 제어와 더 가깝다고 생각해 이 파트에 넣었습니다.
@@ -18,7 +19,7 @@ draft: false
 `nil` 병합 연산자(Nil-Coalescing Operator)는 옵셔널 값이 `nil` 인지 여부에 따라 분기합니다. `??` 키워드를 이용합니다.
 
 ```swift
-/*   
+/*
     a 가 nil 이 아니라면 a 의 옵셔널을 해제한 값을 return 하고
     nil 이라면 b 를 return 합니다.
 */
@@ -90,7 +91,7 @@ let underSix = ...6
 underSix.contains(7) // false
 underSix.contains(2) // true
 underSix.contains(-100) // true
-``` 
+```
 
 ## 반복문
 
@@ -175,14 +176,14 @@ for _ in 1...3 {
     hello
     hello
 */
-``` 
+```
 
 #### stride 함수
 
 시퀀스를 만드는 특정함수입니다.
 
-*  `stride(from:to:by:)` 는 from 부터 to 까지(to 미포함) by 씩 반복됩니다.
-*  `stride(from:through:by:)` 는 from 부터 through(through 포함) 까지 by 씩 반복됩니다.
+- `stride(from:to:by:)` 는 from 부터 to 까지(to 미포함) by 씩 반복됩니다.
+- `stride(from:through:by:)` 는 from 부터 through(through 포함) 까지 by 씩 반복됩니다.
 
 ```swift
 for step in stride(from: 0, to: 4, by:2) {
@@ -240,6 +241,7 @@ repeat {
     구문
 } while 조건
 ```
+
 ```swift
 var step = 0
 
@@ -259,9 +261,9 @@ print("끝")
 
 조건에 따라 처리를 다르게 해줘야할 때 사용합니다. 스위프트는 `if` 와 `switch` 를 제공합니다.
 
-### if 
+### if
 
-다른 언어에서의 if 문과 동일합니다. 
+다른 언어에서의 if 문과 동일합니다.
 
 ```swift
 var step = 0
@@ -279,20 +281,21 @@ if step == 1 {
 ### switch
 
 switch 문은 각 상황에 맞는 구문을 매칭해줍니다. C++ 나 Java, Javascript 에서는 `break` 구문을 이용해 case 를 빠져나왔지만, 스위프트는 `break` 구문을 적지 않아도 됩니다.
-하나의 case 에는 하나의 구문만 올 수 있고, 조건이 여러개일 때는 쉼표(`,`) 를 이용합니다. 
+하나의 case 에는 하나의 구문만 올 수 있고, 조건이 여러개일 때는 쉼표(`,`) 를 이용합니다.
 
 ```swift
 switch 값 {
     case 값1:
         구문1
-    case 값2: 
+    case 값2:
         구문2
     case 값3, 값4:
         구문3
     default:
-        기본구문 
+        기본구문
 }
 ```
+
 ```swift
 var step = 3
 
@@ -308,7 +311,7 @@ default: print("nothing")
 
 #### 범위를 갖는 case
 
-switch 의 case 의 조건으로 범위연산자가 올 수 있습니다. 
+switch 의 case 의 조건으로 범위연산자가 올 수 있습니다.
 
 ```switch
 var step = 50
@@ -382,8 +385,7 @@ case let (x, y):
 // (1, -1) is on the line x == -y
 ```
 
-
-## 제어 전송 구문 
+## 제어 전송 구문
 
 제어 전송 구문은 반복이나 조건문에서 코드의 흐름을 바꾸기위해 사용하는 구문입니다.
 
@@ -403,7 +405,7 @@ for index in 0...6 {
     3
     5
 */
-``` 
+```
 
 ### break
 
@@ -453,7 +455,7 @@ default:
 
 ### label
 
-라벨을 문장 앞에 붙이면 라벨 구문(labeled statements)이 되는데 `contineu`, `break` 에서 라벨을 지정해 이동합니다. 
+라벨을 문장 앞에 붙이면 라벨 구문(labeled statements)이 되는데 `contineu`, `break` 에서 라벨을 지정해 이동합니다.
 
 ```swift
 var step = 1
@@ -470,7 +472,7 @@ stepLoop: while step != 7 {
         break stepLoop
     }
 }
-```  
+```
 
 라벨 구문은 `goto` 문과 비슷한 느낌을 받아 지양해야 한다고 생각이 듭니다. label 을 써야할 때면 다른 조건으로 풀 수 있는지 다시 고민해봐야 합니다. [참고문서](https://medium.com/@rwgrier/swift-labeled-statements-3624ff30e0e7)
 
@@ -479,7 +481,6 @@ stepLoop: while step != 7 {
 `guard` 문을 이용해 조건을 검사하고, 만족하지 않을 시 특정 처리를 할 수 있습니다.
 
 단순 `if-else` 문과 다른 점은 `guard` 문은 옵셔널 바인딩을 통해 값을 얻어낼 수 있어 `nil` 검사를 하지 않고 코드가 간결해질 수 있습니다.
-
 
 ```swift
 func greet(person: [String: String]) {
@@ -512,7 +513,7 @@ func greet(person: [String: String]) {
     if person["name"] == nil { // nil 체크
         return
     }
-    
+
     let name = person["name"]! // 옵셔널 강제 해제
 
     print("Hello \(name)!")
@@ -559,6 +560,6 @@ if #available(iOS 10, macOS 10.12, *) {
 
 ## 참고문서
 
-* [Swift 문서](https://swift.org/)
-* [The Swift Language Guide - 한국어](https://jusung.gitbook.io/the-swift-language-guide/)
-* [Checking API Availability in Swift - AndyBargh.com](https://andybargh.com/checking-api-availability-in-swift/)
+- [Swift 문서](https://swift.org/)
+- [The Swift Language Guide - 한국어](https://jusung.gitbook.io/the-swift-language-guide/)
+- [Checking API Availability in Swift - AndyBargh.com](https://andybargh.com/checking-api-availability-in-swift/)
