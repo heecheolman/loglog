@@ -22,8 +22,7 @@ draft: true
 
 **목표**
 
-- 클래스 컴포넌트의 이해
-- 함수형 컴포넌트의 이해
+- 함수형 컴포넌트의 등장 배경
 
 ## 클래스 컴포넌트
 
@@ -92,7 +91,7 @@ export default Main
 
 Change A 버튼을 계속 누르다보면 의문점이 생깁니다. `textA` 는 상태가 `AA` 로 업데이트 된 이후에 값이 그대로인데 Change A 버튼을 누를때마다 render() 함수를 호출하는것을 볼 수 있습니다.
 
-// GIF //
+![예제1](./gif/react-functional1.gif)
 
 컴포넌트는 자신이 생성되고 파괴되기까지 일련의 라이프사이클을 갖습니다. 리액트 컴포넌트도 라이프사이클을 갖고 있는데 라이프사이클 훅들중 Props 나 State 가 변경됐을 때 렌더링을 할지 판단해주는 [shouldComponentUpdate 라이프사이클 훅](react-life-cycle#shouldcomponentupdatenextprops-nextstate)을 이용해 A 가 변경되지 않았을 때는 렌더링되지 않게 최적화를 진행합니다.
 
@@ -102,11 +101,11 @@ Main 코드에 다음 코드를 넣습니다.
 // ...
 
 shouldComponentUpdate(nextProps: IProps, nextState: IState) {
-    const changedTextA = this.state.textA !== nextState.textA
-    const changedTextB = this.state.textB !== nextState.textB
+  const changedTextA = this.state.textA !== nextState.textA
+  const changedTextB = this.state.textB !== nextState.textB
 
-    return changedTextA || changedTextB
-  }
+  return changedTextA || changedTextB
+}
 
 // ...
 ```
@@ -117,7 +116,7 @@ shouldComponentUpdate(nextProps: IProps, nextState: IState) {
 
 위의 코드를 넣은 상태로 Change A 버튼을 누른다면 넣기전 코드와는 다르게 render() 함수를 호출하지 않는 것을 볼 수 있습니다.
 
-// GIF //
+![예제2](./gif/react-functional2.gif)
 
 ### 순수 컴포넌트(Pure Component)를 이용한 최적화
 
@@ -183,12 +182,34 @@ export default Main
 
 순수 컴포넌트로 작성된 Main 컴포넌트의 동작도 동일하게 최적화된 것을 볼 수 있습니다.
 
-// GIF //
+![예제3](./gif/react-functional3.gif)
+
+앞으로 이야기 할 함수형 컴포넌트는 위의 클래스 컴포넌트와 구현하는방법이 어떻게 다르고 왜 생겼는지 알아봅니다.
 
 ## 함수형 컴포넌트
 
-함수형 컴포넌트에 들어가기 앞서 단방향 데이터 흐름에 대해 알아봅니다.
-불변성, 순수함수 (a, b) => a + b 라는걸 설명하고 HOF 에 대한 간단한 개념 설명 후
-함수형컴포넌트 설명
+리액트에서 Props 는 읽기전용(readonly) 로 사용됩니다. 이는 순수함수를 지향하기 때문인데요. 순수함수란 동일한 Input 에 대해 동일한 Output 을 내는것을 뜻합니다.
 
-React Hooks 와 커스텀 훅
+```ts
+// 순수함수
+function sum(a, b) {
+  return a + b
+}
+```
+
+리액트의 컴포넌트도 props 라는 Input 을 받아 Output(React Element) 을 반환한다는 측면에서 '함수'의 역할을 한다고 볼 수 있습니다. 그렇다면 리액트의 모든 컴포넌트들은 순수함수로 이루어져야 할까요?
+
+사실, props 외에 컴포넌트는 상태(state) 를 가질수 있습니다. 컴포넌트의 상태에 따라 출력(render)이 달라지기도 합니다. 이를 잘 관리하기 위해서는 컴포넌트를 크게 두가지로 구분할 수 있을 것 같습니다.
+
+1. 상태를 가지는 컴포넌트
+2. 상태를 갖지 않는 컴포넌트
+
+2번을 먼저 생각해보면 상태를 갖지 않는 컴포넌트들은 자신이 상위 컴포넌트로부터 전달받은 props 를 단순히 그려내기만 하는 역할을 하면 될 것 같습니다. 이를 Presentational 컴포넌트 라고 합니다. Presentational 컴포넌트는 자기자신을 나타내는데 props 만 필요할 뿐이고, props 가 전달받은 값이 변경되었을 때 형태를 변환시키는 재-렌더링(rerender) 과정을 거칩니다.
+
+![이미지](images/react-functional4.png)
+
+1번의 경우는 Presentational 컴포넌트들에게 전달해줄 데이터들을 가지고 있는데 이를 컨테이너(Container) 컴포넌트 라고 합니다. Presentational 컴포넌트들이 사용하기 좋게 가공해서 전달해주는 과정이 필요할 수 있는데 중앙저장소(Store) 들을 통해 가공하기도 합니다.
+
+위의 분리방법은 클래스 컴포넌트에서도 충분히 가능한 이야기입니다. 하지만 클래스 컴포넌트는 로직에 대한 재사용이 어렵습니다. 예를들어 '네트워크를 통해 데이터를 받는 로직', '현재 페이지의 스크롤을 구독', '데이터 CRUD(생성, 조회, 업데이트, 삭제)' 와 같은 로직들은 매 페이지마다 있을 수 있으며 이는 **재사용 가능한 '로직' 입니다.**
+
+**함수형 컴포넌트가 나온 이유는 클래스 컴포넌트의 복잡성과 로직의 재사용성에 초점을 두고 있습니다.** 리액트 컴포넌트는 Input 에 대한 render() 라는 Output 을 내는 '함수' 에 가깝습니다. 리액트 컴포넌트의 Input 과 Output 사이에 필요한 상태나 어떠한 처리가 필요하다면 React Hooks API 를 이용해 '로직'을 분리해 다른 컴포넌트에서도 재사용 가능하게 만들어줄 수 있습니다.

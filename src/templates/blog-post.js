@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import './blog-post.scss';
+import './blog-post.scss'
 import TagLabel from '../components/tag-label'
 import Divider from '../components/divider'
 import { graphql } from 'gatsby'
@@ -9,11 +9,20 @@ import { Utterences } from '../components/utterances'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 export default function Template({ data }) {
-  const { markdownRemark: post } = data;
-  const { utterenceRepo } = useSiteMetadata();
+  const { markdownRemark: post } = data
+  const { utterenceRepo } = useSiteMetadata()
+
+  const contentImage = post.frontmatter.image
+    ? post.frontmatter.image.childImageSharp.resize.src
+    : ''
+
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={contentImage}
+      />
       <div className="post-section">
         <div className="post-section-title">{post.frontmatter.title}</div>
         <div className="post-section-frontmatter">
@@ -30,16 +39,11 @@ export default function Template({ data }) {
         />
       </div>
       <div className="tag-section">
-        {
-          post.frontmatter.tags.map((tag, index) =>
-            <TagLabel
-              key={index}
-              label={tag}
-            />
-          )
-        }
+        {post.frontmatter.tags.map((tag, index) => (
+          <TagLabel key={index} label={tag} />
+        ))}
       </div>
-      <Utterences repo={utterenceRepo}/>
+      <Utterences repo={utterenceRepo} />
     </Layout>
   )
 }
@@ -54,6 +58,20 @@ export const pageQuery = graphql`
         title
         tags
         author
+        # image {
+        #   id
+        #   childImageSharp {
+        #     id
+        #     resize(width: 768) {
+        #       src
+        #       tracedSVG
+        #       width
+        #       height
+        #       aspectRatio
+        #       originalName
+        #     }
+        #   }
+        # }
       }
       fields {
         readingTime {

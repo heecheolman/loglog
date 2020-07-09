@@ -1,4 +1,4 @@
-@import "./mixins.scss";
+@import './mixins.scss';
 
 h1 {
   margin-top: 40px;
@@ -45,44 +45,22 @@ h6 {
 
 .markdown-content {
   font-weight: 300;
-  word-break: break-all;
+  word-break: keep-all;
 
   .toc {
-    position: fixed;
-    max-width: 200px;
-    top: 120px;
-    padding: 0 0.75rem;
-    color: var(--textWeak);
-    border-left: 2px solid var(--textWeak);
-
-    @include forToc() {
-      display: none;
-    }
-
-    @include forDesktop2() {
-      right: 10px;
-    }
-
-    @include forDesktop3() {
-      right: 10%;
-    }
-
-    ul:first-child {
-      padding: 0;
-    }
-
     ul {
-      margin: 0;
-      padding-left: 15px;
       list-style: none;
-      line-height: 1.5;
+      margin: 0;
 
       li {
-        line-height: 1.5;
-        * {
-          line-height: 1.5;
-          color: var(--textWeak);
-          font-size: 0.7rem;
+        font-size: 0.8rem;
+
+        > p {
+          font-size: 0.8rem;
+        }
+        > ul {
+          margin: 8px 0 8px 10px;
+          padding-left: 10px;
         }
       }
     }
@@ -147,7 +125,7 @@ h6 {
     margin-bottom: 1.25rem;
     font-size: 1rem;
     color: var(--textNormal);
-    //text-align: justify;
+    line-height: 1.8rem;
   }
 
   img {
@@ -202,7 +180,7 @@ h6 {
     li {
       margin: 0;
       font-size: 1rem;
-      margin-bottom: 0.5rem;
+      // margin-bottom: 0.5rem;
     }
 
     p {
@@ -243,7 +221,7 @@ h6 {
     font-size: 0.8em;
   }
 
-  :not(pre) > code[class*="language-"] {
+  :not(pre) > code[class*='language-'] {
     padding: 0.2em 0.4em;
     margin: 0;
     font-size: 85%;

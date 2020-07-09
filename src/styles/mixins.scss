@@ -14,7 +14,6 @@
   color: var(--textTitle);
 
   .card-title {
-
     .card-title-icon {
       display: inline-flex;
       color: inherit;
@@ -36,41 +35,28 @@
   color: var(--textTitle);
   transition: $transition-duration $transition-function;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: var(--primary);
   }
 }
 
 @mixin highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, rgba(114, 172, 255, 0.41) 50%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(114, 172, 255, 0.41) 50%
+  );
 }
 
 @mixin forMobile {
   @media screen and (max-width: $mobile-upper-boundary - 1) {
-    @content
+    @content;
   }
 }
 
 @mixin forTablet {
   @media screen and (min-width: $mobile-upper-boundary) and (max-width: $tablet-upper-boundary - 1) {
-    @content
-  }
-}
-
-@mixin forToc {
-  @media screen and (max-width: 1230px) {
-    @content
-  }
-}
-
-@mixin forDesktop2 {
-  @media screen and (min-width: 1230px) {
-    @content
-  }
-}
-
-@mixin forDesktop3 {
-  @media screen and (min-width: 1600px) {
-    @content
+    @content;
   }
 }

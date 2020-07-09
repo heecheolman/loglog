@@ -5,19 +5,18 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title, image }) {
+function SEO({ lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
-            description
             author
             image
           }
@@ -26,8 +25,8 @@ function SEO({ description, lang, meta, title, image }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || site.siteMetadata.image;
+  // const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || site.siteMetadata.image
 
   return (
     <Helmet
@@ -37,10 +36,10 @@ function SEO({ description, lang, meta, title, image }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `description`,
+        //   content: metaDescription,
+        // },
         {
           name: `image`,
           content: metaImage,
@@ -49,10 +48,10 @@ function SEO({ description, lang, meta, title, image }) {
           property: `og:title`,
           content: title,
         },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
+        // {
+        //   property: `og:description`,
+        //   content: metaDescription,
+        // },
         {
           property: `og:image`,
           content: metaImage,
@@ -73,10 +72,10 @@ function SEO({ description, lang, meta, title, image }) {
           name: `twitter:title`,
           content: title,
         },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
       ].concat(meta)}
     />
   )
