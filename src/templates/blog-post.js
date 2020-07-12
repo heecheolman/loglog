@@ -18,6 +18,8 @@ export default function Template({ data }) {
     ? post.frontmatter.image.childImageSharp.resize.src
     : ''
 
+  console.log(contentImage)
+
   useEffect(() => {
     const scrollHandler = event => {
       if (window.pageYOffset >= 270) {
@@ -76,6 +78,20 @@ export const pageQuery = graphql`
         title
         tags
         author
+        image {
+          id
+          childImageSharp {
+            id
+            resize(width: 768) {
+              src
+              tracedSVG
+              width
+              height
+              aspectRatio
+              originalName
+            }
+          }
+        }
       }
       headings {
         id

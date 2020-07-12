@@ -7,11 +7,10 @@ author: 김희철
 tags:
   - review
 draft: false
+image: images/2019-review.jpg
 ---
 
-```toc
-
-```
+![이미지](./images/2019-review.jpg)
 
 2019년 한해를 마무리하며 새해를 맞이하기 전에 자신을 되돌아보고 아쉬웠던 부분, 이뤘던 부분들을 되짚어보며 더 나은 2020년을 보내고 싶은 마음에 짧게 정리해봅니다.
 

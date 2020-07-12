@@ -6,11 +6,10 @@ date: '2020-04-06 21:25:54'
 tags:
   - 'react'
 draft: false
+image: images/react-lifecycle.jpg
 ---
 
-```toc
-
-```
+![이미지](./images/react-lifecycle.jpg)
 
 ## 리액트
 

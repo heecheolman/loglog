@@ -3,12 +3,13 @@ path: /post/why-hooks
 title: 왜 React Hooks 일까?
 author: 김희철
 date: '2020-07-04 15:34:50'
+image: images/why-hooks.jpg
 tags:
   - react
 draft: false
 ---
 
-![이미지](./images/why-hooks.jpeg)
+![이미지](./images/why-hooks.jpg)
 
 리액트에서 컴포넌트를 정의하는 방법은 Class 컴포넌트와 Functional 컴포넌트로 두가지가 있습니다. Hooks API 는 Functional 컴포넌트에서 사용하는데 이는 Class 컴포넌트를 완전히 대체할 수 있습니다. [리액트가 Hooks 를 만든 이유는 공식 문서에도 나와있지만](https://reactjs.org/docs/hooks-intro.html#motivation) 간단한 예제를 통해 왜 리액트가 Hooks 를 만들게 되었는지 살펴보고싶어 글을 정리하려 합니다. 여기에 사용되는 예제는 타입스크립트를 기반으로 작성되고 있습니다.
 
