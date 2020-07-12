@@ -2,7 +2,7 @@
 
 .post-section {
   @include card();
-  // padding: 40px;
+  position: relative;
 
   &-title {
     font-size: 3rem;
