@@ -18,8 +18,6 @@ export default function Template({ data }) {
     ? post.frontmatter.image.childImageSharp.resize.src
     : ''
 
-  console.log(contentImage)
-
   useEffect(() => {
     const scrollHandler = event => {
       if (window.pageYOffset >= 270) {
