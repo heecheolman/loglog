@@ -1,19 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import ProfileCard from '../components/profile-card'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import ProfileCard from '../components/ProfileCard'
+
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-function IndexPage () {
-  const { timeline } = useSiteMetadata();
+const Home = () => {
+  const { timeline } = useSiteMetadata()
   return (
     <Layout>
       <SEO title="홈" />
       <ProfileCard timeline={timeline} />
     </Layout>
-  );
+  )
 }
 
 export const query = graphql`
@@ -36,4 +37,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default Home

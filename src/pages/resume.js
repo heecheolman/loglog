@@ -1,8 +1,8 @@
-import React from 'react';
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React from 'react'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
 
-function Resume () {
+const Resume = () => {
   return (
     <Layout>
       <SEO title="이력서" />
@@ -11,4 +11,4 @@ function Resume () {
   )
 }
 
-export default Resume;
+export default Resume

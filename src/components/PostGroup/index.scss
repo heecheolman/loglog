@@ -1,0 +1,43 @@
+@import '../../styles/mixins';
+
+.post-group {
+  @include card();
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      position: relative;
+
+      a {
+        @include link();
+        position: relative;
+        padding-left: 100px;
+
+        .post-date {
+          position: absolute;
+          left: 0;
+          color: var(--textWeak);
+        }
+        .post-dev {
+          margin-left: 8px;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-size: 11px;
+          color: var(--textQuote);
+          background-color: var(--textQuoteBg);
+          border: 1px solid #e3e3e3;
+        }
+      }
+
+      :hover {
+      }
+    }
+  }
+}
+
+.post-group:not(:last-child) {
+  margin-bottom: 10px;
+}

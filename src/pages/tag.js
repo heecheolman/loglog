@@ -1,14 +1,16 @@
 import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
 import { graphql } from 'gatsby'
+
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import TagLabel from '../components/TagLabel'
+import PostGroup from '../components/PostGroup'
+
 import postGroupByDate from '../services/post-group-by-date'
-import TagLabel from '../components/tag-label'
-import PostGroup from '../components/post-group'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-function Tag({ data, pageContext }) {
+const Tag = ({ data, pageContext }) => {
   const { edges: postList, dateGroup } = data.allMarkdownRemark
 
   const targetPostList = isProduction

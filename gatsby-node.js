@@ -11,7 +11,8 @@ const isProduction = process.env.NODE_ENV === 'production'
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+  const BlogPostTemplate = path.resolve('src/templates/BlogPost/index.js')
+
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -52,12 +53,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    console.log('node', node)
     if (isProduction && node.frontmatter.draft) {
       return
     }
     createPage({
       path: node.frontmatter.path,
-      component: blogPostTemplate,
+      component: BlogPostTemplate,
       context: {}, // additional data can be passed via context
     })
   })

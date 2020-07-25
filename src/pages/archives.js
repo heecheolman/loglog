@@ -1,13 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import PostGroup from '../components/post-group'
+
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import PostGroup from '../components/PostGroup'
+
 import postGroupByDate from '../services/post-group-by-date'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-function Archives({ data }) {
+const Archives = ({ data }) => {
   const { edges: postList, dateGroup } = data.allMarkdownRemark
 
   const targetPostList = isProduction
