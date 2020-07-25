@@ -8,7 +8,7 @@ const path = require('path')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const BlogPostTemplate = path.resolve('src/templates/BlogPost/index.js')
@@ -53,14 +53,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log('node', node)
     if (isProduction && node.frontmatter.draft) {
       return
     }
+    const path = node.frontmatter.path
     createPage({
-      path: node.frontmatter.path,
+      path,
       component: BlogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        pagePath: path,
+      },
     })
   })
 

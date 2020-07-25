@@ -1,13 +1,17 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import SEO from '../components/Seo'
+
+import ResumeLayout from '../layouts/ResumeLayout'
+import Introduce from '../resume-components/Introduce'
+import Ability from '../resume-components/Ability'
+import Career from '../resume-components/Career'
 
 const Resume = () => {
   return (
-    <Layout>
-      <SEO title="이력서" />
-      <h2>이력서</h2>
-    </Layout>
+    <ResumeLayout>
+      <Introduce />
+      <Ability />
+      <Career />
+    </ResumeLayout>
   )
 }
 

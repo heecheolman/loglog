@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSiteMetadata } from '../../hooks/use-site-metadata'
 import { graphql } from 'gatsby'
 
-import Layout from '../../components/Layout'
+import MainLayout from '../../layouts/MainLayout'
 import SEO from '../../components/Seo'
 import TagLabel from '../../components/TagLabel'
 import Divider from '../../components/Divider'
@@ -36,7 +36,7 @@ const BlogTemplate = ({ data }) => {
   const { headings } = post
 
   return (
-    <Layout>
+    <MainLayout>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description}
@@ -64,7 +64,7 @@ const BlogTemplate = ({ data }) => {
         ))}
       </div>
       <Utterences repo={utterenceRepo} />
-    </Layout>
+    </MainLayout>
   )
 }
 

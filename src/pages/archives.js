@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import MainLayout from '../layouts/MainLayout'
 import SEO from '../components/Seo'
 import PostGroup from '../components/PostGroup'
 
@@ -19,12 +19,12 @@ const Archives = ({ data }) => {
   const postEntries = postGroupByDate(targetPostList, dateGroup)
 
   return (
-    <Layout>
+    <MainLayout>
       <SEO title="아카이브" />
       {postEntries.map(([title, postList]) => (
         <PostGroup key={title} title={title} postList={postList} />
       ))}
-    </Layout>
+    </MainLayout>
   )
 }
 

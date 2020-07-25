@@ -1,0 +1,19 @@
+.introduce {
+  & .title {
+    margin: 0 0 36px 0;
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--textNormal);
+  }
+
+  & .primary {
+    color: var(--primary);
+  }
+
+  & > p {
+    line-height: 1.8;
+    font-size: 1.3rem;
+    color: var(--textNormal);
+    margin: 0;
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "introduce": {
+    "title": "안녕하세요.",
+    "description": "웹 프론트엔드 개발자 김희철입니다."
+  },
+  "abilities": [
+    {
+      "title": "데이터 시각화",
+      "details": [
+        "텍스트로만 이루어진 심심한 데이터를 차트로 시각화 하여 보여줄 수 있습니다.",
+        "주로 사용하는 라이브러리는 ECharts 입니다."
+      ]
+    }
+  ],
+  "career": [
+    {
+      "company": "에멘탈",
+      "position": "웹 프론트엔드",
+      "term": "2019.1 ~ 현재",
+      "product": "비즈넵",
+      "description": "비즈넵은 자본을 가용하기 힘들어 세무서비스를 받을 수 없는 소상공인들을 위한  서비스입니다. 국세청과 금융기관에 아이디, 비밀번호를 입력해 자금의 흐름과 세금 리포트를 받아볼 수 있고 세금관련 사고를 방지할 수 있습니다.",
+      "projects": [
+        {
+          "name": "보고서 정기 발행",
+          "time": "2020.7 ~ 2020.7",
+          "description": "비즈넵 모바일에서 사업자가 사업현황 관련 보고서를 정기적으로 받아볼 수 있습니다. ",
+          "details": ["ECharts 사용"],
+          "techs": ["Ionic3", "Typesciprt", "SCSS", "GraphQL"]
+        },
+        {
+          "name": "대화 채널",
+          "time": "2020.5 ~ 2020.6",
+          "description": "비즈넵 모바일에서 세무사무소와 사업자가 업무관련 소통할 수 있는 공간입니다.",
+          "details": [
+            "GraphQL Subscriptoin 을 이용한 웹소켓 연결",
+            "iOS 와 Android 디바이스 대응",
+            "실시간 채팅 구현"
+          ],
+          "techs": ["Ionic3", "Typesciprt", "SCSS", "GraphQL"]
+        },
+        {
+          "name": "업무 도구",
+          "time": "2020.3 ~ 2020.5",
+          "description": "비즈넵 웹앱에서 세무사무소 직원들이 사용할 업무 관리 도구입니다. 사업자가 업무와 관련되어 있는 경우 대화채널 기능을 이용해 대화를 할 수 있습니다.",
+          "details": ["채팅 기능 구현", "업무(티켓) 생성 및 수정"],
+          "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "Ngxs"]
+        },
+        {
+          "name": "사업현황",
+          "time": "??",
+          "description": "사업자의 매출, 매입, 원천징수, 세금 등 사업현황의 전반적인 흐름을 볼 수 있는 데이터 시각화 프로젝트입니다. 기간별 설정과 즐겨찾기가 가능합니다.",
+          "details": [
+            "ECharts 사용",
+            "모바일 기기 대응",
+            "PDF 다운로드 (클라이언트)"
+          ],
+          "techs": [
+            "Angular",
+            "Ionic3",
+            "Typescript",
+            "SCSS",
+            "GraphQL",
+            "ECharts"
+          ]
+        },
+        {
+          "name": "거래처 관리",
+          "time": "??",
+          "description": "세무소에서 사용하는 거래처 관리 프로그램으로 그리드 툴을 이용했습니다.",
+          "details": [
+            "Wijmo 그리드 이용",
+            "키보드 이벤트를 추가해 사용성 증가"
+          ],
+          "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "Wijmo"]
+        },
+        {
+          "name": "사용자 분석 도구 지원",
+          "time": "??",
+          "description": "웹앱, 모바일, 웹사이트에서 사용자 분석을위한 도구들을 도입했습니다.",
+          "details": [
+            "Google Analytics를 도입해 UX / UI 개선 기여",
+            "Google Optimize A/B Test 적용",
+            "모바일 Firebase Event 적용",
+            "Full Story를 이용한 이벤트 흐름 제공"
+          ],
+          "techs": [
+            "Google Analytics",
+            "Google Analytics",
+            "Firebase",
+            "Full Story"
+          ]
+        },
+        {
+          "name": "비즈넵 버전 업그레이드",
+          "time": "??",
+          "description": "기존 서비스(2.0)에서 다음 버전 서비스(3.0) 으로 개선했습니다. 세무사를 위한 기능들이 추가되며 복잡해지면서 UX 가 개선되어야 했습니다.",
+          "details": [
+            "Gnb 와 전체 메뉴의 계층구조 변경",
+            "타이틀, 메뉴, 브레드크럼에 대한 관리 및 권한부여 일원화"
+          ],
+          "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "REST API"]
+        },
+        {
+          "name": "사업체 상세정보 대량 입력 폼 개발",
+          "time": "??",
+          "description": "홈택스의 사업체 정보를 입력하는 대량의 폼을 개발했습니다. 홈택스 정보와 일치 하지 않을시 동기화가 가능합니다.",
+          "details": ["JSON 기반의 대량 폼 생성", "지도 API 연결"],
+          "techs": ["Angular", "Typescript", "NgxFormly", "Ngxs"]
+        }
+      ]
+    },
+    {
+      "company": "대학교 졸업작품",
+      "position": "팀 리더",
+      "term": "2018.6 ~ 2019.3",
+      "product": "누리다",
+      "description": "'누구나 리포터가 될 수 있다'라는 뜻으로 동네 소식을 알리는 위치 기반 서비스입니다. 대학교 졸업작품으로 총 4명이 같이 했으며 기획, 웹 프론트, 웹 백엔드를 개발해 AWS 로 호스팅했었습니다.",
+      "projects": [
+        {
+          "name": "누리다",
+          "time": "2018.6 ~ 2019.3",
+          "description": "누리다는 위치기반 소식을 알리는 웹앱으로 접속한 위치를 기준으로 글을 작성합니다. 댓글, 좋아요 등을 통해 동네별 핫이슈가 선정되고 동네와 사용자를 팔로우 할 수 있습니다.",
+          "details": [
+            "Google Geometry API를 사용해 위치값을 기반으로 동네의 범위를 그룹화 했습니다.",
+            "AWS 의 EC2를 이용해 호스팅 했습니다.",
+            "이미지 업로드"
+          ],
+          "techs": [
+            "Vue",
+            "Vuex",
+            "SCSS",
+            "Google Geometry API",
+            "AWS EC2",
+            "AWS RDB(PostgreSQL)"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "개인 프로젝트",
+      "position": "1인 개발",
+      "term": "2017.6 ~ 2017.10",
+      "product": "트위터 클론",
+      "description": "'트위터SNS'를 클론 코딩한 프로젝트입니다. SPA를 이용한 개발과 서버를 구축하고 DB 설계도 같이 진행했습니다. 웹 프론트엔드 개발에 막 들어서며 처음 진행한 프로젝트입니다.",
+      "projects": [
+        {
+          "name": "트위터 클론",
+          "time": "2017.6 ~ 2017.9",
+          "description": "회원가입, 로그인 기능과 팔로우, 팔로잉기능이 있습니다. 사용자는 게시물을 사진과 함께 올릴 수 있습니다.",
+          "details": [
+            "이미지 업로드",
+            "회원가입 및 로그인",
+            "팔로우 팔로잉 기능",
+            "AWS 호스팅"
+          ],
+          "techs": [
+            "Vue",
+            "Vuex",
+            "SCSS",
+            "AWS EC2",
+            "PostgreSQL",
+            "AWS RDB(PostgreSQL)"
+          ]
+        }
+      ]
+    }
+  ]
+}

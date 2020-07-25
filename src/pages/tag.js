@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import MainLayout from '../layouts/MainLayout'
 import SEO from '../components/Seo'
 import TagLabel from '../components/TagLabel'
 import PostGroup from '../components/PostGroup'
@@ -25,13 +25,13 @@ const Tag = ({ data, pageContext }) => {
   )
 
   return (
-    <Layout>
+    <MainLayout>
       <SEO title={pageContext.tagName || ''} />
       {tagElement}
       {postEntries.map(([title, postList]) => (
         <PostGroup key={title} title={title} postList={postList} />
       ))}
-    </Layout>
+    </MainLayout>
   )
 }
 

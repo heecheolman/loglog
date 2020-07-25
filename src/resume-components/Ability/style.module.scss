@@ -1,0 +1,35 @@
+.ability {
+  & .title {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--textNormal);
+    margin-bottom: 36px;
+  }
+
+  & .type {
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--textNormal);
+    margin-bottom: 24px;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & li {
+      font-size: 1.3rem;
+      color: var(--textNormal);
+
+      // &:before {
+      //   // display: inline-block;
+      //   // content: '';
+      //   // width: 10px;
+      //   // height: 10px;
+      //   // border-radius: 50%;
+      //   // background-color: var(--primary);
+      // }
+    }
+  }
+}

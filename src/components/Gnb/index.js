@@ -18,7 +18,9 @@ const Gnb = ({ siteTitle = '' }) => {
           <Link to="/archives" activeClassName="link-active">
             아카이브
           </Link>
-          {/*<Link to="/resume"  activeClassName="link-active">이력서</Link>*/}
+          <Link to="/resume" activeClassName="link-active">
+            이력서
+          </Link>
         </div>
       </div>
     </nav>

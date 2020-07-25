@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import MainLayout from '../layouts/MainLayout'
 import SEO from '../components/Seo'
 import ProfileCard from '../components/ProfileCard'
 
@@ -10,10 +10,10 @@ import { useSiteMetadata } from '../hooks/use-site-metadata'
 const Home = () => {
   const { timeline } = useSiteMetadata()
   return (
-    <Layout>
+    <MainLayout>
       <SEO title="홈" />
       <ProfileCard timeline={timeline} />
-    </Layout>
+    </MainLayout>
   )
 }
 

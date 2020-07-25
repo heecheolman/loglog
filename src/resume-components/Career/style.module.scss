@@ -1,0 +1,88 @@
+.career {
+  & .title {
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--textNormal);
+  }
+
+  & .split {
+    display: flex;
+    padding: 3rem 0;
+
+    & .left {
+      flex: 1;
+
+      & .company {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--textNormal);
+        margin-bottom: 1.5rem;
+      }
+      & .product {
+        font-size: 1.3rem;
+        color: var(--textNormal);
+      }
+      & .position {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: var(--textNormal);
+      }
+      & .term {
+        font-size: 0.9rem;
+        color: var(--textNormal);
+      }
+      & .description {
+        font-size: 0.9rem;
+        color: var(--textNormal);
+        line-height: 1.8;
+        word-break: keep-all;
+      }
+    }
+    & .right {
+      flex: 2;
+      padding-left: 2.5rem;
+
+      & .project {
+        margin-bottom: 5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        & .projectName {
+          font-weight: bold;
+          font-size: 1.8rem;
+          color: var(--textNormal);
+          margin-bottom: 0.5rem;
+        }
+        & .time {
+          font-size: 1rem;
+          color: var(--textNormal);
+          margin-bottom: 0.5rem;
+        }
+        & .description {
+          margin: 0 0 1rem 0;
+          color: var(--textNormal);
+          font-size: 1.1rem;
+          line-height: 1.8;
+        }
+        & .detailGroup {
+          margin: 0 0 3rem 0;
+          padding: 0 0 0 1.5rem;
+
+          & .detail {
+            color: var(--textNormal);
+            line-height: 1.8;
+          }
+        }
+        & .tech {
+          display: inline-block;
+          margin: 0 1rem 0.4rem 0;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--textNormal);
+        }
+      }
+    }
+  }
+}
