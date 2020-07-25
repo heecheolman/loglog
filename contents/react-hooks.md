@@ -16,11 +16,11 @@ draft: true
 
 React Hooks 는 React 16.8 버전에 새로 도입된 기능입니다. Hook 은 어떤 일련의 과정중에 일어나는 시점을 말하는데 React Hooks 는 클래스 컴포넌트에서 사용되던 LifeCycle API 를 대체할 수 있습니다.
 
-> 기존의 클래스 컴포넌트를 함수형 컴포넌트와 React Hooks 로 대체해야하는 것을 뜻하진 않습니다. [React 는 클래스 컴포넌트를 없앨 계획은 없다](https://ko.reactjs.org/docs/hooks-intro.html#no-breaking-changes)고 밝혔습니다.
+> 기존의 클래스 컴포넌트를 함수 컴포넌트와 React Hooks 로 대체해야하는 것을 뜻하진 않습니다. [React 는 클래스 컴포넌트를 없앨 계획은 없다](https://ko.reactjs.org/docs/hooks-intro.html#no-breaking-changes)고 밝혔습니다.
 
 ## React Hooks 를 꼭 사용해야하나요?
 
-함수형 컴포넌트의 React Hooks 는 클래스 컴포넌트를 대체할 수 있지만 필수가 아니고 선택적으로 적용할 수 있습니다. 선택적인 이유는 기존의 클래스컴포넌트에서 사용하던 props, render 등의 개념들을 바꿔서 적용하는것이 아니기 때문입니다.
+함수 컴포넌트의 React Hooks 는 클래스 컴포넌트를 대체할 수 있지만 필수가 아니고 선택적으로 적용할 수 있습니다. 선택적인 이유는 기존의 클래스컴포넌트에서 사용하던 props, render 등의 개념들을 바꿔서 적용하는것이 아니기 때문입니다.
 
 ## 무엇이 달라졌나요?
 

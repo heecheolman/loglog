@@ -11,7 +11,7 @@ draft: false
 
 ![이미지](./images/why-hooks.jpg)
 
-리액트에서 컴포넌트를 정의하는 방법은 Class 컴포넌트와 Functional 컴포넌트로 두가지가 있습니다. Hooks API 는 Functional 컴포넌트에서 사용하는데 이는 Class 컴포넌트를 완전히 대체할 수 있습니다. [리액트가 Hooks 를 만든 이유는 공식 문서에도 나와있지만](https://reactjs.org/docs/hooks-intro.html#motivation) 간단한 예제를 통해 왜 리액트가 Hooks 를 만들게 되었는지 살펴보고싶어 글을 정리하려 합니다. 여기에 사용되는 예제는 타입스크립트를 기반으로 작성되고 있습니다.
+리액트에서 컴포넌트를 정의하는 방법은 Class 컴포넌트와 Function 컴포넌트로 두가지가 있습니다. Hooks API 는 Function 컴포넌트에서 사용하는데 이는 Class 컴포넌트를 완전히 대체할 수 있습니다. [리액트가 Hooks 를 만든 이유는 공식 문서에도 나와있지만](https://reactjs.org/docs/hooks-intro.html#motivation) 간단한 예제를 통해 왜 리액트가 Hooks 를 만들게 되었는지 살펴보고싶어 글을 정리하려 합니다. 여기에 사용되는 예제는 타입스크립트를 기반으로 작성되고 있습니다.
 
 ## Class 컴포넌트
 
@@ -173,9 +173,9 @@ export default Main
 
 순수 컴포넌트로 작성된 Main 컴포넌트의 동작도 동일하게 최적화된 것을 볼 수 있습니다.
 
-## Functional 컴포넌트
+## Function 컴포넌트
 
-위의 Main 예제를 Functional 컴포넌트로 변환을 해보겠습니다. Class 컴포넌트와 처리하는 로직이 어떻게 변경되는지 신경쓰면서 살펴보면 좋을 것 같습니다.
+위의 Main 예제를 Function 컴포넌트로 변환을 해보겠습니다. Class 컴포넌트와 처리하는 로직이 어떻게 변경되는지 신경쓰면서 살펴보면 좋을 것 같습니다.
 
 ```tsx
 import React, { useState } from 'react'
@@ -201,7 +201,7 @@ export default Main
 
 ![예제4](./gif/react-hooks4.gif)
 
-Class 컴포넌트를 Functional 컴포넌트로 변환해서 실행한 결과입니다. 다른점은 상태를 갖기 위해 Hooks API 의 useState 를 사용했습니다. setTextA() 함수를 통해 `AA` 로 설정해준 뒤로 '렌더링' 로그가 찍히지 않는것을 볼 수 있습니다.
+Class 컴포넌트를 Function 컴포넌트로 변환해서 실행한 결과입니다. 다른점은 상태를 갖기 위해 Hooks API 의 useState 를 사용했습니다. setTextA() 함수를 통해 `AA` 로 설정해준 뒤로 '렌더링' 로그가 찍히지 않는것을 볼 수 있습니다.
 
 ```tsx
 import React from 'react'
@@ -244,7 +244,7 @@ export default Main
 
 ## 로직의 재사용을 위한 HOC
 
-Class 컴포넌트와 Functional 컴포넌트 예제에서 공통적인 부분이 있습니다. textA 와 textB 상태를 가지고있고 이것들을 각각 업데이트하는 로직이 있습니다. 이 로직이 만약 다른 컴포넌트에서도 사용할 수 있다면 이를 고려해 재사용성을 높이는 방법으로 구현되어야 할 것 같습니다. 재사용되는 로직들을 [HOC(Higher Order Component: 고차 컴포넌트)](https://ko.reactjs.org/docs/higher-order-components.html)를 이용해 구현해봅니다.
+Class 컴포넌트와 Function 컴포넌트 예제에서 공통적인 부분이 있습니다. textA 와 textB 상태를 가지고있고 이것들을 각각 업데이트하는 로직이 있습니다. 이 로직이 만약 다른 컴포넌트에서도 사용할 수 있다면 이를 고려해 재사용성을 높이는 방법으로 구현되어야 할 것 같습니다. 재사용되는 로직들을 [HOC(Higher Order Component: 고차 컴포넌트)](https://ko.reactjs.org/docs/higher-order-components.html)를 이용해 구현해봅니다.
 
 먼저 textA 와 textB 그리고 이것들의 상태를 변경하는 changeTextA 와 changeTextB 에 대한 공통 상태와 로직들을 갖는 withText 라는 HOC 를 구현했습니다. Main 컴포넌트는 상태(textA, textB)와 공통로직(changeTextA, changeTextB) 을 props 로 받아 동작시킵니다.
 
