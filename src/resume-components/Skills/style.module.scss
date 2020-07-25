@@ -1,0 +1,27 @@
+.skills {
+  & .title {
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--textNormal);
+  }
+
+  & .skill {
+    padding: 1rem 0;
+
+    & .skillGroupName {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: var(--textNormal);
+      margin-bottom: 0.5rem;
+    }
+
+    & .skillGroup {
+      margin: 0 0 1rem 0;
+      padding: 0 0 0 1.5rem;
+
+      & li {
+        color: var(--textNormal);
+      }
+    }
+  }
+}

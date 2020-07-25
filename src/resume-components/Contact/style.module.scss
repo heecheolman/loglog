@@ -1,0 +1,17 @@
+.contact {
+  & .title {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--textNormal);
+  }
+
+  & ul {
+    margin: 0 0 1rem 0;
+    padding: 1rem 0 0 1.5rem;
+
+    & li {
+      color: var(--textNormal);
+      line-height: 1.5;
+    }
+  }
+}

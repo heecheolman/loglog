@@ -1,7 +1,9 @@
 .section {
-  margin-bottom: 36px;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--dividerBg);
 
   &:last-child {
     margin-bottom: 0;
+    border: 0;
   }
 }

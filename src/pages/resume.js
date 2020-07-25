@@ -2,15 +2,21 @@ import React from 'react'
 
 import ResumeLayout from '../layouts/ResumeLayout'
 import Introduce from '../resume-components/Introduce'
-import Ability from '../resume-components/Ability'
 import Career from '../resume-components/Career'
+import Skills from '../resume-components/Skills'
+import Contact from '../resume-components/Contact'
+import DarkMode from '../components/DarkMode'
+import Seo from '../components/Seo'
 
 const Resume = () => {
   return (
     <ResumeLayout>
+      <Seo title="이력서" />
+      <DarkMode />
       <Introduce />
-      <Ability />
       <Career />
+      <Skills />
+      <Contact />
     </ResumeLayout>
   )
 }

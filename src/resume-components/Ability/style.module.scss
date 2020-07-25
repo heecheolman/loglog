@@ -7,7 +7,7 @@
   }
 
   & .type {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 2rem;
     color: var(--textNormal);
     margin-bottom: 24px;
@@ -21,15 +21,6 @@
     & li {
       font-size: 1.3rem;
       color: var(--textNormal);
-
-      // &:before {
-      //   // display: inline-block;
-      //   // content: '';
-      //   // width: 10px;
-      //   // height: 10px;
-      //   // border-radius: 50%;
-      //   // background-color: var(--primary);
-      // }
     }
   }
 }

@@ -24,7 +24,10 @@
           "name": "보고서 정기 발행",
           "time": "2020.7 ~ 2020.7",
           "description": "비즈넵 모바일에서 사업자가 사업현황 관련 보고서를 정기적으로 받아볼 수 있습니다. ",
-          "details": ["ECharts 사용"],
+          "details": [
+            "정기 콘텐츠 발행을 받아볼 수 있는 환경 구성",
+            "ECharts 사용"
+          ],
           "techs": ["Ionic3", "Typesciprt", "SCSS", "GraphQL"]
         },
         {
@@ -39,15 +42,45 @@
           "techs": ["Ionic3", "Typesciprt", "SCSS", "GraphQL"]
         },
         {
-          "name": "업무 도구",
+          "name": "업무 도구 개발",
           "time": "2020.3 ~ 2020.5",
-          "description": "비즈넵 웹앱에서 세무사무소 직원들이 사용할 업무 관리 도구입니다. 사업자가 업무와 관련되어 있는 경우 대화채널 기능을 이용해 대화를 할 수 있습니다.",
+          "description": "비즈넵 웹앱에서 세무사무소 직원들이 사용할 업무 관리 도구입니다. 세무사가 '업무'를 생성하고 담당자를 지정해 할당할 수 있습니다. 사업자가 업무와 관련되어 있는 경우 대화채널 기능을 이용해 대화를 할 수 있습니다.",
           "details": ["채팅 기능 구현", "업무(티켓) 생성 및 수정"],
           "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "Ngxs"]
         },
         {
+          "name": "비즈넵 어드민 구독/결제 관리 기능",
+          "time": "2020.2 ~ 2020.4",
+          "description": "비즈넵 구독 및 결제 서비스를 어드민에서 관리하는 기능입니다.",
+          "details": ["환불 기능 개발", "구독 / 결제 관련 관리기능 개발"],
+          "techs": ["Angular", "Typescript", "SCSS", "GraphQL"]
+        },
+        {
+          "name": "사용자 분석 도구 지원",
+          "time": "2020.1 ~ 2020.2",
+          "description": "웹앱, 모바일, 웹사이트에서 사용자 분석을위한 도구들을 도입했습니다.",
+          "details": [
+            "Google Analytics를 도입해 UX / UI 개선 기여",
+            "Google Optimize A/B Test 적용",
+            "모바일 Firebase Event 적용",
+            "Full Story를 이용한 이벤트 흐름 제공"
+          ],
+          "techs": ["Google Analytics", "Firebase", "Full Story"]
+        },
+        {
+          "name": "비즈넵 버전 업그레이드",
+          "time": "2020.8 ~ 2020.1",
+          "description": "기존 서비스(2.0)에서 다음 버전 서비스(3.0) 으로 개선했습니다. 세무사를 위한 기능들이 추가되며 복잡해지면서 UX 가 개선되어야 했습니다.",
+          "details": [
+            "Store 구조 개선",
+            "Gnb 와 전체 메뉴의 계층구조 변경",
+            "타이틀, 메뉴, 브레드크럼에 대한 관리 및 권한부여 일원화"
+          ],
+          "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "REST API"]
+        },
+        {
           "name": "사업현황",
-          "time": "??",
+          "time": "2019.7 ~ 2019.9",
           "description": "사업자의 매출, 매입, 원천징수, 세금 등 사업현황의 전반적인 흐름을 볼 수 있는 데이터 시각화 프로젝트입니다. 기간별 설정과 즐겨찾기가 가능합니다.",
           "details": [
             "ECharts 사용",
@@ -65,7 +98,7 @@
         },
         {
           "name": "거래처 관리",
-          "time": "??",
+          "time": "2019.5 ~ 2019.8",
           "description": "세무소에서 사용하는 거래처 관리 프로그램으로 그리드 툴을 이용했습니다.",
           "details": [
             "Wijmo 그리드 이용",
@@ -74,35 +107,8 @@
           "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "Wijmo"]
         },
         {
-          "name": "사용자 분석 도구 지원",
-          "time": "??",
-          "description": "웹앱, 모바일, 웹사이트에서 사용자 분석을위한 도구들을 도입했습니다.",
-          "details": [
-            "Google Analytics를 도입해 UX / UI 개선 기여",
-            "Google Optimize A/B Test 적용",
-            "모바일 Firebase Event 적용",
-            "Full Story를 이용한 이벤트 흐름 제공"
-          ],
-          "techs": [
-            "Google Analytics",
-            "Google Analytics",
-            "Firebase",
-            "Full Story"
-          ]
-        },
-        {
-          "name": "비즈넵 버전 업그레이드",
-          "time": "??",
-          "description": "기존 서비스(2.0)에서 다음 버전 서비스(3.0) 으로 개선했습니다. 세무사를 위한 기능들이 추가되며 복잡해지면서 UX 가 개선되어야 했습니다.",
-          "details": [
-            "Gnb 와 전체 메뉴의 계층구조 변경",
-            "타이틀, 메뉴, 브레드크럼에 대한 관리 및 권한부여 일원화"
-          ],
-          "techs": ["Angular", "Typescript", "SCSS", "GraphQL", "REST API"]
-        },
-        {
           "name": "사업체 상세정보 대량 입력 폼 개발",
-          "time": "??",
+          "time": "2019.3 ~ 2019.5",
           "description": "홈택스의 사업체 정보를 입력하는 대량의 폼을 개발했습니다. 홈택스 정보와 일치 하지 않을시 동기화가 가능합니다.",
           "details": ["JSON 기반의 대량 폼 생성", "지도 API 연결"],
           "techs": ["Angular", "Typescript", "NgxFormly", "Ngxs"]
@@ -114,7 +120,7 @@
       "position": "팀 리더",
       "term": "2018.6 ~ 2019.3",
       "product": "누리다",
-      "description": "'누구나 리포터가 될 수 있다'라는 뜻으로 동네 소식을 알리는 위치 기반 서비스입니다. 대학교 졸업작품으로 총 4명이 같이 했으며 기획, 웹 프론트, 웹 백엔드를 개발해 AWS 로 호스팅했었습니다.",
+      "description": "'누구나 리포터가 될 수 있다'라는 뜻으로 동네 소식을 알리는 위치 기반 서비스입니다. 대학교 졸업작품으로 총 4명이 같이 했으며 팀 리더였습니다.",
       "projects": [
         {
           "name": "누리다",
@@ -164,5 +170,62 @@
         }
       ]
     }
-  ]
+  ],
+  "skills": [
+    {
+      "title": "HTML/CSS",
+      "details": [
+        "마크업을 구조적으로 설계해 작성할 수 있습니다.",
+        "Sass와 같은 CSS Preprocessor 를 사용할 수 있습니다.",
+        "SEO를 적용한 경험이 있습니다.",
+        "반응형을 적용할 수 있습니다.",
+        "다양한 브라우저를 지원할 수 있습니다."
+      ]
+    },
+    {
+      "title": "Javascript",
+      "details": [
+        "ES6 이상 문법을 적극 사용합니다.",
+        "타입스크립트를 사용해 개발할 수 있습니다.",
+        "Vanilla JS 를 이용해 DOM 을 조작할 수 있습니다.",
+        "폴리필을 이용해 구형 브라우저를 지원할 수 있습니다."
+      ]
+    },
+    {
+      "title": "Angular",
+      "details": [
+        "RxJS를 이용해 반응형 프로그래밍에 익숙합니다.",
+        "Angular의 컴포넌트 라이프사이클을 각 상황에 맞게 잘 적용합니다.",
+        "모듈단위 구조를 설계하고 Lazy Loading 을 이용해 초기로딩을 개선할 수 있습니다.",
+        "Production 과 Develop 버전을 구분해 개발할 수 있습니다.",
+        "Flux 패턴 기반으로 구현된 Angular 의 NgRx를 사용해봤습니다."
+      ]
+    },
+    {
+      "title": "Server",
+      "details": ["Express.js를 이용해 REST API 를 작성할 수 있습니다."]
+    },
+    {
+      "title": "DevOps",
+      "details": ["AWS EC2 를 이용해 배포를 해본 경험이 있습니다."]
+    },
+    {
+      "title": "도구",
+      "details": [
+        "Git 을 잘 사용하고, GitFlow 를 적용해 개발한 경험이 있습니다."
+      ]
+    },
+    {
+      "title": "협업",
+      "details": [
+        "협업을 하기위해선 개인의 책임감이 전제가 되어야 한다고 생각합니다. 책임감이 있을 때 서로 더 좋은 결과물을 도출해내기 때문입니다.",
+        "의견이 다를 수 있음을 존중하고, 더 나은 방향을 향해 이야기하는것을 좋아합니다."
+      ]
+    }
+  ],
+  "contact": {
+    "phone": "010-9975-4457",
+    "email": "msn9975@gmail.com",
+    "github": "https://github.com/heecheolman"
+  }
 }

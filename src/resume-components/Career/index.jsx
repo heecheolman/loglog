@@ -46,9 +46,10 @@ const Career = ({ className }) => {
       <div className={styles.split} key={`career-${careerIndex}`}>
         <div className={styles.left}>
           <div className={styles.company}>{career.company}</div>
-          <div className={styles.product}>{career.product}</div>
-          <div className={styles.position}>{career.position}</div>
+
           <div className={styles.term}>{career.term}</div>
+          <div className={styles.position}>{career.position}</div>
+          <div className={styles.product}>{career.product}</div>
 
           <p className={styles.description}>{career.description}</p>
         </div>
