@@ -1,8 +1,4 @@
-@import '../../styles/mixins';
-
 .profile-card {
-  @include card();
-
   .header {
     display: flex;
     justify-content: center;
@@ -22,14 +18,14 @@
     width: 100%;
 
     p {
-      max-width: 500px;
-      margin: 20px auto;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.8;
       color: var(--textNormal);
     }
 
     .reference {
+      font-weight: bold;
       text-align: right;
     }
   }

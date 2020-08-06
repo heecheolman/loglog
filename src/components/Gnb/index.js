@@ -5,25 +5,25 @@ import DarkMode from '../DarkMode'
 
 const Gnb = ({ siteTitle = '' }) => {
   return (
-    <nav className="gnb">
+    <div className="gnb">
       <div className="inner-gnb">
         <div className="title-wrap">
           <Link to="/">{siteTitle}</Link>
           <DarkMode />
         </div>
-        <div className="category-wrap">
+        <nav className="category-wrap">
           <Link to="/" activeClassName="link-active">
             홈
           </Link>
-          <Link to="/archives" activeClassName="link-active">
-            아카이브
+          <Link to="/posts" activeClassName="link-active">
+            포스트
           </Link>
           <Link to="/resume" activeClassName="link-active">
             이력서
           </Link>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   )
 }
 

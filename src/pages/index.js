@@ -4,6 +4,9 @@ import { graphql } from 'gatsby'
 import MainLayout from '../layouts/MainLayout'
 import SEO from '../components/Seo'
 import ProfileCard from '../components/ProfileCard'
+import CardTitle from '../components/CardTitle'
+import Card from '../resume-components/layouts/Card'
+import Section from '../resume-components/layouts/Section'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
@@ -12,7 +15,12 @@ const Home = () => {
   return (
     <MainLayout>
       <SEO title="홈" />
-      <ProfileCard timeline={timeline} />
+      <Section>
+        <CardTitle>안녕하세요</CardTitle>
+        <Card>
+          <ProfileCard timeline={timeline} />
+        </Card>
+      </Section>
     </MainLayout>
   )
 }

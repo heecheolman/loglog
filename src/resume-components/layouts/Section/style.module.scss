@@ -1,6 +1,9 @@
 .section {
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--dividerBg);
+  padding: 4rem 0;
+
+  &:first-of-type {
+    padding-top: 2rem;
+  }
 
   &:last-child {
     margin-bottom: 0;

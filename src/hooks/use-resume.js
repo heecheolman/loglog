@@ -3,17 +3,19 @@ import { useState } from 'react'
 
 function useResume() {
   const [introduce] = useState(resume.introduce)
-  const [abilities] = useState(resume.abilities)
   const [career] = useState(resume.career)
   const [skills] = useState(resume.skills)
-  const [contact] = useState(resume.contact)
+  const [experience] = useState(resume.experience)
+  const [likes] = useState(resume.likes)
+  const [education] = useState(resume.education)
 
   return {
     introduce,
-    abilities,
     career,
     skills,
-    contact,
+    experience,
+    likes,
+    education,
   }
 }
 

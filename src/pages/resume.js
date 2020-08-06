@@ -4,7 +4,9 @@ import ResumeLayout from '../layouts/ResumeLayout'
 import Introduce from '../resume-components/Introduce'
 import Career from '../resume-components/Career'
 import Skills from '../resume-components/Skills'
-import Contact from '../resume-components/Contact'
+import Experience from '../resume-components/Experience'
+import Likes from '../resume-components/Likes'
+import Education from '../resume-components/Education'
 import DarkMode from '../components/DarkMode'
 import Seo from '../components/Seo'
 
@@ -15,8 +17,10 @@ const Resume = () => {
       <DarkMode />
       <Introduce />
       <Career />
+      <Education />
+      <Experience />
       <Skills />
-      <Contact />
+      <Likes />
     </ResumeLayout>
   )
 }

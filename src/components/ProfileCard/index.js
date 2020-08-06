@@ -8,19 +8,18 @@ const ProfileCard = ({ timeline }) => {
   const site = useSiteMetadata()
   return (
     <div className="profile-card">
-      <h2>프로필</h2>
       <div className="header">
         <div className="profile-image"></div>
       </div>
       <div className="body">
-        <p>{site.description}</p>
+        <p dangerouslySetInnerHTML={{ __html: site.description }}></p>
         <div className="reference">
           <a
             href="https://github.com/heecheolman"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Github
+            깃허브 방문하기
           </a>
         </div>
       </div>

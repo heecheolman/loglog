@@ -2,6 +2,9 @@ import React from 'react'
 import classNames from 'classnames'
 
 import Section from '../layouts/Section'
+import Card from '../layouts/Card'
+import CardTitle from '../../components/CardTitle'
+import Divider from '../../components/Divider'
 
 import styles from './style.module.scss'
 import useResume from '../../hooks/use-resume'
@@ -41,26 +44,34 @@ const Career = ({ className }) => {
         </div>
       )
     })
+    const Descriptions = career.descriptions.map(
+      (description, descriptionIndex) => (
+        <p
+          key={`description-${descriptionIndex}`}
+          className={styles.description}
+        >
+          {description}
+        </p>
+      )
+    )
 
     return (
-      <div className={styles.split} key={`career-${careerIndex}`}>
-        <div className={styles.left}>
-          <div className={styles.company}>{career.company}</div>
+      <Card key={`career-${careerIndex}`}>
+        <div className={styles.subTitle}>{career.company}</div>
 
-          <div className={styles.term}>{career.term}</div>
-          <div className={styles.position}>{career.position}</div>
-          <div className={styles.product}>{career.product}</div>
-
-          <p className={styles.description}>{career.description}</p>
-        </div>
-        <div className={styles.right}>{Projects}</div>
-      </div>
+        <div className={styles.product}>{career.product}</div>
+        <div className={styles.position}>{career.position}</div>
+        <div className={styles.term}>{career.term}</div>
+        {Descriptions}
+        <Divider />
+        {Projects}
+      </Card>
     )
   })
 
   return (
     <Section className={classProps}>
-      <div className={styles.title}>경력</div>
+      <CardTitle>경력</CardTitle>
       {Careers}
     </Section>
   )

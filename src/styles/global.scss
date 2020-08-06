@@ -27,17 +27,19 @@ body {
 body {
   --bg: #fff;
   --textNormal: #3d3d3d;
-  --textWeak: #9da3b9;
+  --textWeak: #6b6b6b;
   --textTitle: #3d3d3d;
   --primary: #578cdc;
-  --card-box-shadow: rgba(0, 0, 0, 0.1);
+  --card-box-shadow: rgba(0, 0, 0, 0.2);
   --card-bg: #fff;
   --textQuote: #8b93ac;
   --textQuoteBg: #f9f9f9;
   --dividerBg: #e2e3eb;
-  --codeBg: #1b1f230d;
-  --codeColor: #3d3d3d;
+  --codeBg: #edf3fa;
+  --codeColor: #4b4b4b;
 
+  --resume-card-shadow1: #9aa0b90d;
+  --resume-card-shadow2: #a6adc933;
   background-color: var(--bg);
 }
 
@@ -50,12 +52,15 @@ body.dark {
   --textWeak: #e1e1e1;
   --textTitle: #f9f9f9;
   --primary: #578cdc;
-  --card-box-shadow: rgba(0, 0, 0, 0.1);
+  --card-box-shadow: rgba(255, 255, 255, 0.2);
   --card-bg: #2a2c3e;
 
   --textQuote: rgb(137, 143, 164);
   --textQuoteBg: #111219;
   --dividerBg: #9da3b9;
+
+  --resume-card-shadow1: #0000002e;
+  --resume-card-shadow2: #00000033;
 }
 
 a {

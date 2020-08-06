@@ -42,7 +42,7 @@ const BlogTemplate = ({ data }) => {
         description={post.frontmatter.description}
         image={contentImage}
       />
-      <div className="post-section">
+      <article className="post-section">
         <h1 className="post-section-title">{post.frontmatter.title}</h1>
         <div className="post-section-frontmatter">
           <span>{post.frontmatter.date}</span>
@@ -57,7 +57,7 @@ const BlogTemplate = ({ data }) => {
           className="markdown-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </div>
+      </article>
       <div className="tag-section">
         {post.frontmatter.tags.map((tag, index) => (
           <TagLabel key={index} label={tag} />

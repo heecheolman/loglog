@@ -6,7 +6,7 @@ import styles from './style.module.scss'
 const Section = ({ className, children }) => {
   const classProps = classNames(styles.section, className)
 
-  return <div className={classProps}>{children}</div>
+  return <section className={classProps}>{children}</section>
 }
 
 export default Section

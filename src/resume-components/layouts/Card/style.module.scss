@@ -1,0 +1,11 @@
+.card {
+  padding: 3rem 2rem 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px var(--resume-card-shadow1),
+    0 15px 40px var(--resume-card-shadow2);
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

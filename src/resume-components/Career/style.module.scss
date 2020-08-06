@@ -1,117 +1,104 @@
 .career {
   & .title {
-    display: inline;
+    text-align: left;
+    margin: 0;
+    line-height: 1.7rem;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--textNormal);
   }
 
-  & .split {
-    display: flex;
-    padding: 3rem 0;
+  & .subTitle {
+    line-height: 1;
+    margin: 0 0 2rem;
+    font-weight: bold;
+    font-size: 1.7rem;
+    text-align: center;
+    color: var(--textNormal);
+  }
+  & .position {
+    font-size: 1.2rem;
+    color: var(--textNormal);
+  }
+  & .term {
+    font-size: 1rem;
+    color: var(--textWeak);
+  }
 
-    & .left {
-      flex: 1;
+  & .product {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--textNormal);
+    margin-bottom: 1rem;
+  }
 
-      & .company {
-        font-size: 2rem;
-        font-weight: bold;
-        color: var(--textNormal);
-        margin-bottom: 0.5rem;
-      }
-      & .product {
-        font-size: 1.3rem;
-        color: var(--textNormal);
-      }
-      & .position {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        color: var(--textNormal);
-      }
-      & .term {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-        color: var(--textNormal);
-      }
-      & .description {
-        font-size: 0.9rem;
-        color: var(--textNormal);
-        line-height: 1.5;
-        word-break: keep-all;
-      }
-    }
-    & .right {
-      flex: 2;
-      padding-left: 2.5rem;
+  & .description {
+    font-size: 1rem;
+    color: var(--textNormal);
+    line-height: 1.8;
+    word-break: keep-all;
+    margin-bottom: 1.5rem;
 
-      & .project {
-        margin-bottom: 5rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        & .projectName {
-          font-weight: bold;
-          font-size: 2rem;
-          color: var(--textNormal);
-          margin-bottom: 0.5rem;
-        }
-        & .time {
-          font-size: 0.9rem;
-          color: var(--textNormal);
-          margin-bottom: 0.5rem;
-        }
-        & .description {
-          margin: 0 0 1rem 0;
-          color: var(--textNormal);
-          font-size: 1.1rem;
-          line-height: 1.5;
-        }
-        & .detailGroup {
-          margin: 0 0 1rem 0;
-          padding: 0 0 0 1.5rem;
-
-          & .detail {
-            color: var(--textNormal);
-            line-height: 1.5;
-          }
-        }
-        & .tech {
-          display: inline-block;
-          padding: 0.2rem 0.7rem;
-          margin: 0 1rem 0.4rem 0;
-          border: 1px solid var(--dividerBg);
-          font-size: 0.7rem;
-          color: var(--textNormal);
-          border-radius: 2px;
-        }
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
-}
 
-@media screen and (max-width: 767px) {
-  .career {
-    & .split {
-      flex-direction: column;
+  & .project {
+    padding-bottom: 5rem;
 
-      & .left {
-        & .description {
-          margin-bottom: 3rem;
+    &:last-child {
+      padding-bottom: 2rem;
+    }
+
+    & .projectName {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--textNormal);
+    }
+    & .time {
+      font-size: 1rem;
+      color: var(--textWeak);
+      margin-bottom: 1rem;
+    }
+    & .description {
+      margin: 0 0 1rem 0;
+      color: var(--textNormal);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    & .detailGroup {
+      margin: 0 0 1rem 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+
+      & .detail {
+        color: var(--textNormal);
+        line-height: 2;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          background: var(--primary);
+          border-radius: 50%;
+          margin-right: 0.8rem;
+          position: relative;
+          top: -4px;
         }
       }
-
-      & .right {
-        padding-left: 1rem;
-        border-left: 3px solid var(--primary);
-
-        & .project {
-          & .projectName {
-            font-size: 1.4rem;
-          }
-        }
-      }
+    }
+    & .tech {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 1rem 0.4rem 0;
+      border: 1px solid var(--textNormal);
+      font-size: 1rem;
+      color: var(--textNormal);
+      border-radius: 4px;
+      min-height: 32px;
+      padding: 0 0.8rem;
     }
   }
 }
