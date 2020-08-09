@@ -11,8 +11,8 @@
     width: 100%;
 
     .title-wrap {
-      @include card();
       text-align: left;
+      margin-left: -2rem;
       color: var(--primary);
       font-size: 2rem;
       position: relative;
@@ -33,6 +33,14 @@
       a + a {
         margin-left: 15px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .gnb {
+    .title-wrap {
+      margin-left: 0 !important;
     }
   }
 }

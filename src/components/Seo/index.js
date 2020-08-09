@@ -77,7 +77,18 @@ const SEO = ({ lang, meta, title, image }) => {
         //   content: metaDescription,
         // },
       ].concat(meta)}
-    />
+    >
+      <link
+        href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"
+        rel="stylesheet"
+        type="text/css"
+      ></link>
+      <link
+        href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css"
+        rel="stylesheet"
+        type="text/css"
+      ></link>
+    </Helmet>
   )
 }
 
