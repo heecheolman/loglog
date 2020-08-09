@@ -32,8 +32,8 @@ body {
   --textQuote: #8b93ac;
   --textQuoteBg: #f9f9f9;
   --dividerBg: #e2e3eb;
-  --codeBg: #edf3fa;
-  --codeColor: #4b4b4b;
+  --codeBg: #f2f6fc;
+  --codeColor: #3b79d6;
 
   --resume-card-shadow1: #9aa0b90d;
   --resume-card-shadow2: #a6adc933;
@@ -61,7 +61,7 @@ body.dark {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--primary);
   transition: $transition-duration $transition-function;
 
@@ -73,4 +73,46 @@ a {
 
 .link-active {
   color: var(--primary);
+}
+
+.custom-ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+  list-style: none;
+
+  .custom-li {
+    position: relative;
+    color: var(--textNormal);
+    line-height: 2;
+    padding-left: 1rem;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--primary);
+      border-radius: 50%;
+      margin-right: 0.8rem;
+      position: absolute;
+      top: 14px;
+      left: 0;
+    }
+  }
+}
+
+@media print {
+  .custom-ul {
+    list-style: initial;
+    padding-left: 0;
+    margin-left: 3rem;
+
+    .custom-li {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
 }

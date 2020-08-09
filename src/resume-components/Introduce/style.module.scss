@@ -1,24 +1,53 @@
 .introduce {
-  & .subTitle {
-    line-height: 1;
-    margin: 0 0 0.8rem;
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: var(--textNormal);
-    text-align: left;
-  }
-  & .position {
-    margin: 0;
-    font-size: 1.3rem;
-    color: var(--textNormal);
-    text-align: left;
+  & .header {
+    flex-direction: column;
+    display: flex;
+    justify-self: center;
+    align-items: center;
     margin-bottom: 2rem;
+
+    & .name {
+      display: inline-block;
+      line-height: 1;
+      margin: 0 0 0.8rem;
+      font-weight: bold;
+      font-size: 4.2rem;
+      color: var(--primary);
+      text-align: left;
+    }
+    & .position {
+      display: inline-block;
+      margin: 0 0 1rem 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--textNormal);
+      text-align: left;
+    }
   }
+
   & .contact {
-    font-size: 1rem;
-    text-align: right;
-    font-weight: bold;
-    color: var(--textNormal);
+    margin: 0;
+
+    & .icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-left: 1rem;
+      transition: 0.2s ease-out;
+
+      &:first-child {
+        margin: 0;
+      }
+
+      & svg {
+        color: var(--textNormal);
+        width: 1.5rem;
+        height: auto;
+      }
+    }
   }
 
   & .primary {
@@ -26,22 +55,10 @@
   }
 
   & .description {
-    line-height: 1.5;
+    line-height: 1.8;
     font-size: 1rem;
     color: var(--textWeak);
     word-break: keep-all;
     margin: 0 0 2rem 0;
-  }
-
-  & .contact {
-    margin: 0;
-
-    & a {
-      margin-right: 1.5rem;
-
-      &:last-child {
-        margin: 0;
-      }
-    }
   }
 }

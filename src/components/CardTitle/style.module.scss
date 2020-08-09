@@ -14,20 +14,27 @@
   }
 
   & .tape {
-    top: 4rem;
-    left: 2rem;
+    top: 3.5rem;
+    left: 1rem;
     position: absolute;
     width: 10rem;
-    height: 1.2rem;
+    height: 1.5rem;
     background: var(--primary);
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: -1;
     transition: 0.3s ease-in-out;
+    transform: rotate(-2deg);
   }
 }
 
 @media screen and (max-width: 860px) {
   .titleWrap {
     margin-left: 0;
+  }
+}
+
+@media print {
+  .titleWrap {
+    margin: 0;
   }
 }

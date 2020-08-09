@@ -1,6 +1,7 @@
 .profile-card {
   .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -8,9 +9,35 @@
     .profile-image {
       background: url('/heecheolman-profile.jpeg') center center;
       background-size: 130px;
-      width: 100px;
-      height: 100px;
-      border-radius: 120px;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .reference {
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 2rem;
+
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        transition: 0.2s ease-out;
+
+        & svg {
+          color: var(--textNormal);
+          width: 1.5rem;
+          height: auto;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+      }
     }
   }
 
@@ -18,15 +45,10 @@
     width: 100%;
 
     p {
-      text-align: center;
+      text-align: left;
       font-size: 1rem;
       line-height: 1.8;
-      color: var(--textNormal);
-    }
-
-    .reference {
-      font-weight: bold;
-      text-align: right;
+      color: var(--textWeak);
     }
   }
 }

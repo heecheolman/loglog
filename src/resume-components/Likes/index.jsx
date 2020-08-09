@@ -13,7 +13,9 @@ const Likes = ({ className }) => {
   const { likes } = useResume()
   const LikeList = likes.map((like, likeIndex) => {
     const Details = like.details.map((detail, detailIndex) => (
-      <li key={`like-detail-${detailIndex}`}>{detail}</li>
+      <li className="custom-li" key={`like-detail-${detailIndex}`}>
+        {detail}
+      </li>
     ))
     const Name = like.link ? (
       <a href={like.link}>{like.name}</a>
@@ -23,7 +25,7 @@ const Likes = ({ className }) => {
     return (
       <div key={`like-${likeIndex}`} className={styles.like}>
         <div className={styles.likeName}>{Name}</div>
-        <ul>{Details}</ul>
+        <ul className="custom-ul">{Details}</ul>
       </div>
     )
   })

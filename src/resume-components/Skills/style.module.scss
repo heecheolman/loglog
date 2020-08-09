@@ -1,13 +1,4 @@
 .skills {
-  & .title {
-    text-align: left;
-    margin: 0;
-    line-height: 1.7rem;
-    font-weight: bold;
-    font-size: 3.5rem;
-    color: var(--textNormal);
-  }
-
   & .skill {
     margin-bottom: 3rem;
 
@@ -17,29 +8,6 @@
       font-size: 1.7rem;
       color: var(--textNormal);
       margin-bottom: 1rem;
-    }
-
-    & .skillGroup {
-      margin: 0 0 1rem 0;
-      padding: 0 0 0 1rem;
-      list-style: none;
-
-      & li {
-        color: var(--textNormal);
-        line-height: 2;
-
-        &:before {
-          content: '';
-          display: inline-block;
-          width: 5px;
-          height: 5px;
-          background: var(--primary);
-          border-radius: 50%;
-          margin-right: 0.8rem;
-          position: relative;
-          top: -4px;
-        }
-      }
     }
     &:last-child {
       margin-bottom: 0;

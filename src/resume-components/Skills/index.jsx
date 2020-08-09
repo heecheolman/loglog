@@ -13,13 +13,17 @@ const Skills = ({ className }) => {
 
   const SkillGroups = skills.map((skill, skillIndex) => {
     const SkillDetails = skill.details.map((detail, detailIndex) => {
-      return <li key={`skill-detail-${detailIndex}`}>{detail}</li>
+      return (
+        <li className="custom-li" key={`skill-detail-${detailIndex}`}>
+          {detail}
+        </li>
+      )
     })
 
     return (
       <div key={`skill-${skillIndex}`} className={styles.skill}>
         <div className={styles.skillGroupName}>{skill.title}</div>
-        <ul className={styles.skillGroup}>{SkillDetails}</ul>
+        <ul className="custom-ul">{SkillDetails}</ul>
       </div>
     )
   })

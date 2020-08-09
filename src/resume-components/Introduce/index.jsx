@@ -7,6 +7,8 @@ import Section from '../layouts/Section'
 import Card from '../layouts/Card'
 import CardTitle from '../../components/CardTitle'
 import useResume from '../../hooks/use-resume'
+import GithubIcon from '../../images/github.svg'
+import EmailIcon from '../../images/mail.svg'
 
 const Introduce = ({ className }) => {
   const classProps = classNames(styles.introduce, className)
@@ -16,18 +18,31 @@ const Introduce = ({ className }) => {
     <Section className={classProps}>
       <CardTitle>이력서</CardTitle>
       <Card>
-        <h2 className={styles.subTitle}>{introduce.name}</h2>
-        <h3 className={styles.position}>{introduce.job}</h3>
-        <p className={styles.description}>{introduce.description}</p>
-
-        <p className={styles.contact}>
-          <a target="_blank" rel="noreferrer" href={introduce.contact.github}>
-            깃허브 방문하기
-          </a>
-          <a rel="noreferrer" href={`mailto:${introduce.contact.email}`}>
-            이메일로 연락하기
-          </a>
-        </p>
+        <div className={styles.header}>
+          <div className={styles.name}>{introduce.name}</div>
+          <div className={styles.position}>{introduce.job}</div>
+          <p className={styles.contact}>
+            <a
+              className={styles.icon}
+              target="_blank"
+              rel="noreferrer"
+              href={introduce.contact.github}
+            >
+              <GithubIcon />
+            </a>
+            <a
+              className={styles.icon}
+              rel="noreferrer"
+              href={`mailto:${introduce.contact.email}`}
+            >
+              <EmailIcon />
+            </a>
+          </p>
+        </div>
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: introduce.description }}
+        ></p>
       </Card>
     </Section>
   )

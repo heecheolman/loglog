@@ -26,7 +26,7 @@ const Career = ({ className }) => {
         return (
           <li
             key={`career-project-detail-${detailIndex}`}
-            className={styles.detail}
+            className="custom-li"
           >
             {detail}
           </li>
@@ -38,7 +38,7 @@ const Career = ({ className }) => {
           <div className={styles.time}>{project.time}</div>
           <p className={styles.description}>{project.description}</p>
           {project.details.length > 0 && (
-            <ul className={styles.detailGroup}>{Details}</ul>
+            <ul className="custom-ul">{Details}</ul>
           )}
           <div>{Techs}</div>
         </div>

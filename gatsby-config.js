@@ -3,7 +3,8 @@ module.exports = {
     siteUrl: `https://heecheolman.dev`,
     title: `heecheolman`,
     image: `/heecheolman-profile.jpeg`,
-    description: `사용자의 가려운 곳을 긁어주며 일상생활에 녹아드는 서비스를 만들고 싶습니다.<br>최근에는 디자인시스템과 생산성에 관심이 많습니다.`,
+    description:
+      '개발에 열정을 갖고 꾸준한 노력으로 매일 성장하는 김희철입니다. 웹 프론트엔드에 관심이 많아 웹 프론트엔드 개발로 끝을 보고 싶습니다. 전세계 사람들의 일상생활속에서 자연스럽게 녹아드는 좋은 서비스 구현을 위해 디자인 시스템, 데이터 시각화, 협업, 오픈소스등 다양한 분야에 관심을 갖고 있습니다.<br><br>최근에는 남는시간에 사소하게나마 오픈소스에 기여하려고 노력하고 있습니다.',
     author: `heecheolman`,
     utterenceRepo: `heecheolman/loglog`,
     timeline: [
@@ -18,6 +19,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `${__dirname}/src/images`,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

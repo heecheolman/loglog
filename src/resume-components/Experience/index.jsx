@@ -14,7 +14,9 @@ const Experience = ({ className }) => {
 
   const Experience = experience.map((exp, index) => {
     const doits = exp.doit.map((done, index) => (
-      <li key={`doit-${index}`}>{done}</li>
+      <li className="custom-li" key={`doit-${index}`}>
+        {done}
+      </li>
     ))
 
     return (
@@ -24,7 +26,7 @@ const Experience = ({ className }) => {
         <p className={styles.review}>{exp.review}</p>
         <Divider />
         <p className={styles.description}>{exp.description}</p>
-        <ul className={styles.doit}>{doits}</ul>
+        <ul className="custom-ul">{doits}</ul>
       </Card>
     )
   })
