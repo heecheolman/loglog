@@ -57,7 +57,10 @@ const Career = ({ className }) => {
 
     return (
       <Card key={`career-${careerIndex}`}>
-        <div className={styles.subTitle}>{career.company}</div>
+        <div
+          className={styles.subTitle}
+          dangerouslySetInnerHTML={{ __html: career.company }}
+        />
 
         <div className={styles.product}>{career.product}</div>
         <div className={styles.position}>{career.position}</div>

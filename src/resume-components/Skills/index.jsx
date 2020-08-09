@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import styles from './style.module.scss'
 import Section from '../layouts/Section'
 import Card from '../layouts/Card'
+import CardTitle from '../../components/CardTitle'
 import useResume from '../../hooks/use-resume'
 
 const Skills = ({ className }) => {
@@ -25,7 +26,7 @@ const Skills = ({ className }) => {
 
   return (
     <Section className={classProps}>
-      <div className={styles.title}>기술</div>
+      <CardTitle>기술</CardTitle>
       <Card>{SkillGroups}</Card>
     </Section>
   )

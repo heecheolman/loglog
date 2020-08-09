@@ -17,10 +17,10 @@ const Resume = () => {
       <DarkMode />
       <Introduce />
       <Career />
-      <Education />
-      <Experience />
       <Skills />
+      <Experience />
       <Likes />
+      <Education />
     </ResumeLayout>
   )
 }
