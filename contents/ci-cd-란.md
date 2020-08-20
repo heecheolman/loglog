@@ -2,7 +2,7 @@
 path: /post/ci-cd-란
 title: CI/CD 가 뭘까?
 author: 김희철
-date: '2018-05-01 22:06:19'
+date: '2019-05-01 22:06:19'
 tags:
   - tech
 draft: false
