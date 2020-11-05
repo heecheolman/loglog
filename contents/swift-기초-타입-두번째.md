@@ -2,15 +2,11 @@
 path: /post/swift-기초-타입2
 title: Swift 기초 - 타입 두번째
 author: 김희철
-date: "2020-03-21 16:19:33"
+date: '2020-03-21 16:19:33'
 tags:
   - swift
 draft: true
 ---
-
-```toc
-
-```
 
 ## TypeAlias
 

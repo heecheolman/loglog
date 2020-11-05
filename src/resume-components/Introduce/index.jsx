@@ -1,49 +1,79 @@
 import React from 'react'
-import classNames from 'classnames'
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-import styles from './style.module.scss'
+import useResume from '../../hooks/useResume'
+import P from '../../components/P'
+import Title from '../../components/Title'
+import Span from '../../components/Span'
+import Box, { DisplayType, JustifyContent } from '../../components/Box'
+import { ANIMATION } from '../../config/ui'
 
-import Section from '../layouts/Section'
-import Card from '../layouts/Card'
-import CardTitle from '../../components/CardTitle'
-import useResume from '../../hooks/use-resume'
-import GithubIcon from '../../images/github.svg'
-import EmailIcon from '../../images/mail.svg'
+const Section = styled.section`
+  margin-bottom: 5rem;
+`
+
+const A = styled.a`
+  margin-right: 12px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  font-weight: 300;
+  color: var(--textNormal);
+  transition: ${ANIMATION.duration.fast} color ${ANIMATION.function.hover};
+
+  &:hover {
+    color: var(--primary);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+`
 
 const Introduce = ({ className }) => {
-  const classProps = classNames(styles.introduce, className)
   const { introduce } = useResume()
 
   return (
-    <Section className={classProps}>
-      <CardTitle>이력서</CardTitle>
-      <Card>
-        <div className={styles.header}>
-          <div className={styles.name}>{introduce.name}</div>
-          <div className={styles.position}>{introduce.job}</div>
-          <p className={styles.contact}>
-            <a
-              className={styles.icon}
-              target="_blank"
-              rel="noreferrer"
-              href={introduce.contact.github}
-            >
-              <GithubIcon />
-            </a>
-            <a
-              className={styles.icon}
-              rel="noreferrer"
-              href={`mailto:${introduce.contact.email}`}
-            >
-              <EmailIcon />
-            </a>
-          </p>
-        </div>
-        <p
-          className={styles.description}
-          dangerouslySetInnerHTML={{ __html: introduce.description }}
-        ></p>
-      </Card>
+    <Section>
+      <Title
+        heading="h2"
+        css={css`
+          margin-top: 0;
+          margin-bottom: 44px;
+        `}
+      >
+        <Span
+          fontWeight={300}
+          css={css`
+            font-size: inherit;
+          `}
+        >
+          안녕하세요.
+        </Span>
+        <br />
+        {introduce.job}, {introduce.name}
+        <Span
+          fontWeight={300}
+          css={css`
+            font-size: inherit;
+          `}
+        >
+          입니다.
+        </Span>
+      </Title>
+      <P
+        fontWeight={300}
+        css={css`
+          margin-bottom: 32px;
+        `}
+        dangerouslySetInnerHTML={{ __html: introduce.description }}
+      />
+      <Box display={DisplayType.FLEX} justifyContent={JustifyContent.FLEX_END}>
+        <A href={`mailto:${introduce.contact.email}`}>
+          {introduce.contact.email}
+        </A>
+        <A href={introduce.contact.github}>Github</A>
+        <A href={introduce.contact.blog}>Blog</A>
+      </Box>
     </Section>
   )
 }

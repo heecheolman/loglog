@@ -1,48 +1,73 @@
 import React from 'react'
+import { css } from '@emotion/core'
 import { graphql } from 'gatsby'
 
 import MainLayout from '../layouts/MainLayout'
-import SEO from '../components/Seo'
-import ProfileCard from '../components/ProfileCard'
-import CardTitle from '../components/CardTitle'
-import Card from '../resume-components/layouts/Card'
-import Section from '../resume-components/layouts/Section'
+import PostList from '../components/PostList'
+import PostItem from '../components/PostItem'
+import LinkButton from '../components/LinkButton'
 
-import { useSiteMetadata } from '../hooks/use-site-metadata'
+import Box, { DisplayType, JustifyContent } from '../components/Box'
 
-const Home = () => {
-  const { timeline } = useSiteMetadata()
+const Posts = ({ data }) => {
+  const { edges: postList } = data.allMarkdownRemark
+
   return (
     <MainLayout>
-      <SEO title="홈" />
-      <Section>
-        <CardTitle>안녕하세요</CardTitle>
-        <Card>
-          <ProfileCard timeline={timeline} />
-        </Card>
-      </Section>
+      <Box
+        display={DisplayType.FLEX}
+        justifyContent={JustifyContent.FLEX_END}
+        css={css`
+          padding-bottom: 24px;
+        `}
+      >
+        <LinkButton to="/resume">이력서</LinkButton>
+      </Box>
+      <PostList>
+        {postList.map(({ node }, index) => {
+          return (
+            <PostItem
+              key={`post-${index}`}
+              title={node.frontmatter.title}
+              description={node.frontmatter.description}
+              createdAt={node.frontmatter.date}
+              path={node.fields.slug}
+              draft={node.frontmatter.draft}
+            />
+          )
+        })}
+      </PostList>
     </MainLayout>
   )
 }
 
-export const query = graphql`
-  query HomePageQuery {
+export const pageQuery = graphql`
+  query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
-            date(formatString: "YYYY-MM-DD")
-            path
-            tags
+            date(formatString: "YYYY년 M월 D일")
+            description
+            draft
           }
         }
       }
-      dateGroup: group(field: frontmatter___date) {
+      group(field: frontmatter___tags) {
         fieldValue
+        field
+        nodes {
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }
 `
 
-export default Home
+export default Posts

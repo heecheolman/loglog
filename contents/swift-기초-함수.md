@@ -2,15 +2,11 @@
 path: /post/swift-기초-함수
 title: Swift 기초 - 함수
 author: 김희철
-date: "2020-03-28 16:39:58"
+date: '2020-03-28 16:39:58'
 tags:
   - swift
 draft: true
 ---
-
-```toc
-
-```
 
 ## 일급객체
 

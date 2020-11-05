@@ -1,118 +1,72 @@
-////@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap&subset=korean');
-// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap&subset=korean');
-// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap&subset=korean');
-@import './prismjs-dracula';
-@import './markdown-modest';
-@import './variables';
+@import './fonts.scss';
+
+$transition-duration: 0.3s;
+$transition-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 * {
   box-sizing: border-box;
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+  -webkit-print-color-adjust: exact;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
   width: 100%;
   height: 100%;
+  font-size: 16px;
   transition: $transition-duration background-color $transition-function;
+
+  #___gatsby {
+    width: 100%;
+    height: 100%;
+
+    #gatsby-focus-wrapper {
+      width: inherit;
+      height: inherit;
+    }
+  }
 }
 
 body {
   --bg: #fff;
-  --textNormal: #3d3d3d;
-  --textWeak: #6b6b6b;
-  --textTitle: #3d3d3d;
+  --bgInverse: #212529;
+  --textNormal: #495057;
+  --textWeak: #868e96;
+  --textTitle: #495057;
   --primary: #578cdc;
-  --card-box-shadow: rgba(0, 0, 0, 0.2);
-  --card-bg: #fff;
   --textQuote: #8b93ac;
   --textQuoteBg: #f9f9f9;
   --dividerBg: #e2e3eb;
   --codeBg: #f2f6fc;
   --codeColor: #3b79d6;
 
-  --resume-card-shadow1: #9aa0b90d;
-  --resume-card-shadow2: #a6adc933;
+  --primaryButtonBg: #e7f5ff;
+  --primaryButtonHoverBg: #d0ebff;
+  --primaryButtonText: #1c7ed6;
+  --borderWeak: #dee2e6;
+
   background-color: var(--bg);
 }
 
 body.dark {
   -webkit-font-smoothing: antialiased;
   --bg: #1c1e2a;
-  --codeBg: #3f4458;
+  --bgInverse: #fff;
+  --codeBg: #2a2e3a;
   --codeColor: #cacaca;
-  --textNormal: rgba(255, 255, 255, 0.88);
-  --textWeak: #e1e1e1;
+  --textNormal: #ced4da;
+  --textWeak: #868e96;
   --textTitle: #f9f9f9;
   --primary: #578cdc;
-  --card-box-shadow: rgba(255, 255, 255, 0.2);
-  --card-bg: #2a2c3e;
 
   --textQuote: rgb(137, 143, 164);
   --textQuoteBg: #111219;
   --dividerBg: #9da3b9;
 
-  --resume-card-shadow1: #0000002e;
-  --resume-card-shadow2: #00000033;
-}
-
-a {
-  text-decoration: underline;
-  color: var(--primary);
-  transition: $transition-duration $transition-function;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-.link-active {
-  color: var(--primary);
-}
-
-.custom-ul {
-  margin: 0 0 1rem 0;
-  padding-left: 1rem;
-  list-style: none;
-
-  .custom-li {
-    position: relative;
-    color: var(--textNormal);
-    line-height: 2;
-    padding-left: 1rem;
-
-    &:before {
-      content: '';
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: var(--primary);
-      border-radius: 50%;
-      margin-right: 0.8rem;
-      position: absolute;
-      top: 14px;
-      left: 0;
-    }
-  }
-}
-
-@media print {
-  .custom-ul {
-    list-style: initial;
-    padding-left: 0;
-    margin-left: 3rem;
-
-    .custom-li {
-      padding-left: 0;
-
-      &:before {
-        display: none;
-      }
-    }
-  }
+  --primaryButtonBg: #282e3e;
+  --primaryButtonHoverBg: #2e3446;
+  --primaryButtonText: #1c7ed6;
+  --borderWeak: #495057;
 }

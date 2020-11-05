@@ -9,10 +9,6 @@ tags:
 draft: true
 ---
 
-```toc
-
-```
-
 ## Frame-based Layout
 
 AutoLayout 이 나오기 이전에는 Frame-based Layout(프레임 기반 레이아웃) 으로 그렸습니다. 프레임 기반 레이아웃은 단순히 뷰에 대해 좌표를 설정하고 길이와 높이를 정해주면 되지만, 기기가 Landscape 모드로 돌아가게 되면 기존에 유지했던 레이아웃을 기대하기 어렵습니다.

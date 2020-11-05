@@ -1,22 +1,26 @@
 import React from 'react'
+import { css } from '@emotion/core'
 
 import MainLayout from '../layouts/MainLayout'
+import Title from '../components/Title'
 import SEO from '../components/Seo'
-import NotFound from '../components/NotFound'
-import CardTitle from '../components/CardTitle'
-
-import Section from '../resume-components/layouts/Section'
-import Card from '../resume-components/layouts/Card'
+import LinkButton from '../components/LinkButton'
 
 const NotFoundPage = () => (
   <MainLayout>
-    <SEO title="404 페이지를 찾을 수 없습니다" />
-    <Section>
-      <CardTitle>404</CardTitle>
-      <Card>
-        <NotFound />
-      </Card>
-    </Section>
+    <SEO title="존재하지 않는 글이에요." />
+    <Title
+      heading="h3"
+      css={css`
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 24px;
+      `}
+    >
+      존재하지 않는 글이에요.
+    </Title>
+
+    <LinkButton to="/">글 목록으로</LinkButton>
   </MainLayout>
 )
 

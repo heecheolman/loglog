@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 const src = 'https://utteranc.es/client.js'
 const branch = 'master'
 
-const Utterences = ({ repo }) => {
+const Utterances = ({ repo }) => {
   const rootElm = React.createRef()
 
   useEffect(() => {
@@ -26,4 +26,4 @@ const Utterences = ({ repo }) => {
   return <div className="utterences" ref={rootElm} />
 }
 
-export default Utterences
+export default Utterances

@@ -8,10 +8,6 @@ tags:
 draft: true
 ---
 
-```toc
-
-```
-
 ## 소개
 
 React Hooks 는 React 16.8 버전에 새로 도입된 기능입니다. Hook 은 어떤 일련의 과정중에 일어나는 시점을 말하는데 React Hooks 는 클래스 컴포넌트에서 사용되던 LifeCycle API 를 대체할 수 있습니다.

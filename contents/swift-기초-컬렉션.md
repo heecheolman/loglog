@@ -2,15 +2,11 @@
 path: /post/swift-기초-컬렉션
 title: Swift 기초 - 컬렉션
 author: 김희철
-date: "2020-03-22 20:59:11"
+date: '2020-03-22 20:59:11'
 tags:
   - swift
 draft: true
 ---
-
-```toc
-
-```
 
 Swift 에서는 콜렉션 타입으로 세가지가 있습니다.
 

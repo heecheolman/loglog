@@ -1,0 +1,23 @@
+.tags {
+  padding: 0 15px;
+  margin-bottom: 12px;
+
+  > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      // display: inline-flex;
+      // align-items: center;
+      // justify-content: center;
+      padding: 5px 15px;
+      background-color: #f8f9fa;
+      color: #495057;
+      border-radius: 25px;
+      font-size: 13px;
+      height: 32px;
+    }
+  }
+}

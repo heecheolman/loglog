@@ -1,39 +1,73 @@
 import React from 'react'
-import classNames from 'classnames'
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-import styles from './style.module.scss'
+import Box from '../../components/Box'
+import Title from '../../components/Title'
+import useResume from '../../hooks/useResume'
 
-import Section from '../layouts/Section'
-import Card from '../layouts/Card'
-import CardTitle from '../../components/CardTitle'
-import useResume from '../../hooks/use-resume'
+const Section = styled.section`
+  margin-bottom: 5rem;
+`
 
-const Likes = ({ className }) => {
-  const classProps = classNames(styles.likes, className)
+const DetailList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+const DetailListItem = styled.li`
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--textNormal);
+  padding-left: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+  &:before {
+    display: inline-block;
+    position: absolute;
+    content: '•';
+    left: 0;
+    color: var(--primary);
+  }
+`
+
+const Likes = () => {
   const { likes } = useResume()
-  const LikeList = likes.map((like, likeIndex) => {
-    const Details = like.details.map((detail, detailIndex) => (
-      <li className="custom-li" key={`like-detail-${detailIndex}`}>
-        {detail}
-      </li>
-    ))
-    const Name = like.link ? (
-      <a href={like.link}>{like.name}</a>
-    ) : (
-      <span>{like.name}</span>
-    )
+  const likeList = likes.map((like, likeIndex) => {
+    const detailList = like.details.map((detail, detailIndex) => {
+      return (
+        <DetailListItem key={`detail-${detailIndex}`}>{detail}</DetailListItem>
+      )
+    })
     return (
-      <div key={`like-${likeIndex}`} className={styles.like}>
-        <div className={styles.likeName}>{Name}</div>
-        <ul className="custom-ul">{Details}</ul>
-      </div>
+      <Box
+        key={`like-${likeIndex}`}
+        css={css`
+          margin-bottom: 40px;
+        `}
+      >
+        <Title
+          heading="h3"
+          css={css`
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+          `}
+        >
+          {like.name}
+        </Title>
+        <DetailList>{detailList}</DetailList>
+      </Box>
     )
   })
-
   return (
-    <Section className={classProps}>
-      <CardTitle>취미</CardTitle>
-      <Card>{LikeList}</Card>
+    <Section>
+      <Title heading="h2">취미</Title>
+      {likeList}
     </Section>
   )
 }

@@ -5,43 +5,31 @@
  */
 
 const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-
-  const BlogPostTemplate = path.resolve('src/templates/BlogPost/index.js')
-
+  const PostTemplate = path.resolve('src/templates/Post/index.jsx')
   const result = await graphql(`
     {
       allMarkdownRemark(
-        limit: 2000
         sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
       ) {
         edges {
           node {
+            id
+            fields {
+              slug
+            }
             frontmatter {
               title
               path
               draft
             }
           }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
-          nodes {
-            frontmatter {
-              draft
-            }
-          }
-        }
-      }
-      dateGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___date) {
-          fieldValue
         }
       }
     }
@@ -52,41 +40,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (isProduction && node.frontmatter.draft) {
-      return
+  const {
+    data: {
+      allMarkdownRemark: { edges },
+    },
+  } = result
+
+  edges.forEach(({ node }) => {
+    const { slug } = node.fields
+    if (isProduction) {
+      if (!node.frontmatter.draft) {
+        createPage({
+          path: slug,
+          component: PostTemplate,
+          context: {
+            slug,
+          },
+        })
+      }
+    } else {
+      createPage({
+        path: slug,
+        component: PostTemplate,
+        context: {
+          slug,
+        },
+      })
     }
-    const path = node.frontmatter.path
-    createPage({
-      path,
-      component: BlogPostTemplate,
-      context: {
-        pagePath: path,
-      },
-    })
   })
+}
 
-  /*
-    tags pages
-   */
-  result.data.tagsGroup.group.forEach(({ fieldValue, nodes }) => {
-    const includePublish = nodes.some(
-      ({ frontmatter }) => frontmatter && !frontmatter.draft
-    )
-
-    /**
-     * production 인데, 발행할게 없다면 tags 페이지 미발행
-     */
-    if (isProduction && !includePublish) {
-      return
-    }
-
-    createPage({
-      path: '/tags/' + fieldValue,
-      component: path.resolve('src/pages/tag.js'),
-      context: {
-        tagName: fieldValue,
-      },
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: '/post' + slug,
     })
-  })
+  }
 }

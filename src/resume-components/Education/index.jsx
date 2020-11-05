@@ -1,32 +1,64 @@
 import React from 'react'
-import classNames from 'classnames'
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-import styles from './style.module.scss'
+import Box from '../../components/Box'
+import P from '../../components/P'
+import Title from '../../components/Title'
+import useResume from '../../hooks/useResume'
 
-import Section from '../layouts/Section'
-import Card from '../layouts/Card'
-import CardTitle from '../../components/CardTitle'
-import useResume from '../../hooks/use-resume'
+const Section = styled.section`
+  margin-bottom: 5rem;
 
-const Education = ({ className }) => {
-  const classProps = classNames(styles.education, className)
+  &:last-child {
+    margin: 0;
+  }
+`
+
+const Education = props => {
   const { education } = useResume()
 
-  const Educations = education.map((edu, eduIndex) => {
+  const educationList = education.map((edu, eduIndex) => {
     return (
-      <Card key={`like-${eduIndex}`} className={styles.edu}>
-        <div className={styles.name}>{edu.name}</div>
-        <div className={styles.major}>{edu.major}</div>
-        <div className={styles.term}>{edu.term}</div>
-        <p className={styles.description}>{edu.description}</p>
-      </Card>
+      <Box
+        key={`edu-${eduIndex}`}
+        css={css`
+          margin-bottom: 40px;
+        `}
+      >
+        <Title
+          heading="h3"
+          css={css`
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+          `}
+        >
+          {edu.name}
+        </Title>
+        <P>{edu.major}</P>
+        <P
+          weak
+          fontWeight={300}
+          fontSize={0.9}
+          css={css`
+            margin-bottom: 16px;
+          `}
+        >
+          {edu.period}
+        </P>
+        <P fontWeight={300} fontSize={0.9}>
+          {edu.description}
+        </P>
+      </Box>
     )
   })
 
   return (
-    <Section className={classProps}>
-      <CardTitle>학력</CardTitle>
-      {Educations}
+    <Section {...props}>
+      <Title heading="h2">학력</Title>
+      {educationList}
     </Section>
   )
 }

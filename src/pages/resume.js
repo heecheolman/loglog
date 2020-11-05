@@ -7,20 +7,20 @@ import Skills from '../resume-components/Skills'
 import Experience from '../resume-components/Experience'
 import Likes from '../resume-components/Likes'
 import Education from '../resume-components/Education'
-import DarkMode from '../components/DarkMode'
 import Seo from '../components/Seo'
 
 const Resume = () => {
   return (
     <ResumeLayout>
       <Seo title="이력서" />
-      <DarkMode />
-      <Introduce />
-      <Career />
-      <Skills />
-      <Experience />
-      <Likes />
-      <Education />
+      <article>
+        <Introduce />
+        <Career />
+        <Skills />
+        <Experience />
+        <Likes />
+        <Education />
+      </article>
     </ResumeLayout>
   )
 }

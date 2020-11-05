@@ -1,37 +1,75 @@
 import React from 'react'
-import classNames from 'classnames'
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-import styles from './style.module.scss'
-import Section from '../layouts/Section'
-import Card from '../layouts/Card'
-import CardTitle from '../../components/CardTitle'
-import useResume from '../../hooks/use-resume'
+import Box from '../../components/Box'
+import Title from '../../components/Title'
+import useResume from '../../hooks/useResume'
 
-const Skills = ({ className }) => {
-  const classProps = classNames(styles.skills, className)
+const Section = styled.section`
+  margin-bottom: 5rem;
+`
+
+const DetailList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+const DetailListItem = styled.li`
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--textNormal);
+  padding-left: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+  &:before {
+    display: inline-block;
+    position: absolute;
+    content: '•';
+    left: 0;
+    color: var(--primary);
+  }
+`
+
+const Skills = () => {
   const { skills } = useResume()
 
-  const SkillGroups = skills.map((skill, skillIndex) => {
-    const SkillDetails = skill.details.map((detail, detailIndex) => {
+  const skillList = skills.map((skill, skillIndex) => {
+    const detailList = skill.details.map((detail, detailIndex) => {
       return (
-        <li className="custom-li" key={`skill-detail-${detailIndex}`}>
-          {detail}
-        </li>
+        <DetailListItem key={`detail-${detailIndex}`}>{detail}</DetailListItem>
       )
     })
-
     return (
-      <div key={`skill-${skillIndex}`} className={styles.skill}>
-        <div className={styles.skillGroupName}>{skill.title}</div>
-        <ul className="custom-ul">{SkillDetails}</ul>
-      </div>
+      <Box
+        key={`skill-${skillIndex}`}
+        css={css`
+          margin-bottom: 40px;
+        `}
+      >
+        <Title
+          heading="h3"
+          css={css`
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+          `}
+        >
+          {skill.title}
+        </Title>
+        <DetailList>{detailList}</DetailList>
+      </Box>
     )
   })
 
   return (
-    <Section className={classProps}>
-      <CardTitle>기술</CardTitle>
-      <Card>{SkillGroups}</Card>
+    <Section>
+      <Title heading="h2">기술</Title>
+      {skillList}
     </Section>
   )
 }

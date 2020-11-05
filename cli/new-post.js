@@ -1,35 +1,38 @@
-const fs = require('fs');
-const { format } = require('date-fns');
-const inquirer = require('inquirer');
-const grayMatter = require('gray-matter');
-const chalk = require('chalk');
+const fs = require('fs')
+const { format } = require('date-fns')
+const inquirer = require('inquirer')
+const grayMatter = require('gray-matter')
+const chalk = require('chalk')
 
-const CONTENTS_DIR = '/contents';
-const WORK_DIR = process.cwd();
-const TARGET_DIR = `${WORK_DIR}${CONTENTS_DIR}`;
+const CONTENTS_DIR = '/contents'
+const WORK_DIR = process.cwd()
+const TARGET_DIR = `${WORK_DIR}${CONTENTS_DIR}`
 
 const getFileName = title =>
   title
     .split(' ')
     .join('-')
-    .toLowerCase();
+    .toLowerCase()
 
-const getFrontmatter = ({
-  fileName,
-  title,
-  author,
-  tags,
-}) => grayMatter
-  .stringify({
-    content: '\n```toc\n```\n\n ## 글을 작성해주세요.'
-  }, {
-    path: `/post/${fileName}`,
-    title,
-    author,
-    date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
-    tags: tags.split(',').map(tag => tag.toString().trim().toLowerCase()),
-    draft: true,
-  });
+const getFrontmatter = ({ fileName, title, author, tags }) =>
+  grayMatter.stringify(
+    {
+      content: '## 글을 작성해주세요.',
+    },
+    {
+      path: `/post/${fileName}`,
+      title,
+      author,
+      date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+      tags: tags.split(',').map(tag =>
+        tag
+          .toString()
+          .trim()
+          .toLowerCase()
+      ),
+      draft: true,
+    }
+  )
 
 const questions = [
   {
@@ -47,24 +50,22 @@ const questions = [
     name: 'tags',
     message: '태그들을 입력해주세요. (쉼표로 구분)\n',
   },
-];
+]
 
-inquirer
-  .prompt(questions)
-  .then(({ title, author, tags }) => {
-    const fileName = getFileName(title);
-    const frontmatter = getFrontmatter({
-      fileName,
-      title,
-      author,
-      tags,
-    });
-    fs.writeFile(`${TARGET_DIR}/${fileName}.md`, frontmatter, error => {
-      if (error) {
-        console.log(chalk.red('파일을 생성하지 못했습니다:', error));
-        return;
-      }
-      console.log('');
-      console.log(chalk.green('파일을 생성했습니다.'));
-    });
-  });
+inquirer.prompt(questions).then(({ title, author, tags }) => {
+  const fileName = getFileName(title)
+  const frontmatter = getFrontmatter({
+    fileName,
+    title,
+    author,
+    tags,
+  })
+  fs.writeFile(`${TARGET_DIR}/${fileName}.md`, frontmatter, error => {
+    if (error) {
+      console.log(chalk.red('파일을 생성하지 못했습니다:', error))
+      return
+    }
+    console.log('')
+    console.log(chalk.green('파일을 생성했습니다.'))
+  })
+})
