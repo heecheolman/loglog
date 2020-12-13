@@ -226,6 +226,7 @@
     color: var(--codeColor);
     border-radius: 2px;
     white-space: pre-wrap;
+    word-break: break-all;
     text-shadow: none;
   }
 }
