@@ -7,8 +7,8 @@ import DarkMode from '../../components/DarkMode'
 import { HEADER_HEIGHT, PAGE_PADDING, ANIMATION } from '../../config/ui'
 
 const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   height: ${HEADER_HEIGHT}px;
   width: 100%;
   padding: 0 ${PAGE_PADDING}px;
@@ -16,7 +16,7 @@ const HeaderContainer = styled.header`
   transition: ${ANIMATION.duration.default} background-color
     ${ANIMATION.function.default};
   background-color: var(--bg);
-  border-bottom: 1px dashed var(--borderWeak);
+  /* border-bottom: 1px dashed var(--borderWeak); */
 
   @media print {
     display: none;
