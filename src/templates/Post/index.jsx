@@ -21,7 +21,7 @@ const Post = props => {
 
   return (
     <MainLayout>
-      <Seo title={frontmatter.title} />
+      <Seo title={frontmatter.title} description={frontmatter.description} />
       <article className={styles.article}>
         {/* <TableOfContents htmlText={tableOfContents} /> */}
         <div className={styles.articleMeta}>
