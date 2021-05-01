@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://heecheolman.dev`,
     title: `heecheolman`,
-    image: `/heecheolman-profile.jpeg`,
+    image: `/heecheolman-profile.jpg`,
     author: `heecheolman`,
     utterances: `heecheolman/loglog`,
     description: `공부해서 정리하고 기록하는 공간입니다.`,
@@ -83,7 +83,7 @@ module.exports = {
         background_color: `#578CDC`,
         theme_color: `#578CDC`,
         display: `minimal-ui`,
-        icon: `static/heecheolman-profile.jpeg`,
+        icon: `static/heecheolman-profile.jpg`,
       },
     },
     `gatsby-plugin-sass`,
