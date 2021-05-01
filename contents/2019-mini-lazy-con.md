@@ -2,7 +2,7 @@
 path: /post/2019-mini-lazy-con
 title: 2019 Mini Lazy Con
 author: 김희철
-date: '2018-08-27 00:02:00'
+date: '2019-08-27 00:02:00'
 tags:
   - 컨퍼런스
 draft: false
