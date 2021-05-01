@@ -11,9 +11,68 @@
   },
   "career": [
     {
+      "companyName": "비바리퍼블리카",
+      "companyLink": "https://toss.im",
+      "companyLogo": "https://static.toss.im/tds/favicon/favicon.ico",
+      "position": "FrontEnd Developer",
+      "period": "2020년 11월 - 현재",
+      "teams": [
+        {
+          "name": "Inform Team",
+          "period": "2020년 11월 - 현재",
+          "description": "제휴은행사와 협업하여 은행의 계좌 및 카드알림을 사용자가 토스에서 편리하게 이용할 수 있게 연결합니다.",
+          "projects": [
+            {
+              "name": "VanillaJS TDS UI 라이브러리 개발",
+              "period": "2020년 11월 - 현재",
+              "details": [
+                "마크업환경(HTML, CSS, JS)에서 TDS를 사용하기 위해 기존 React 코드를 VanillaJS 버전으로 개발",
+                "Storybook 을 이용해 UI 라이브러리 문서화",
+                "RxJS로 React Hooks 를 포팅",
+                "마크업환경에서 웹뷰 다크모드 대응",
+                "다양한 컴포넌트 개발: Button, BottomSheet, Dialog, BottomCTA, Checkbox, Radio, TextFieldLine 등",
+                "마크업환경에서의 생산성 향상"
+              ],
+              "techs": [
+                "Typescript",
+                "RxJS",
+                "Webpack",
+                "VanillaJS",
+                "Storybook"
+              ]
+            },
+            {
+              "name": "제휴은행사 웹 연동",
+              "period": "2020년 11월 - 현재",
+              "details": [
+                "VanillaJS 버전의 TDS UI 라이브러리를 이용해 개발된 마크업파일을 제휴은행사에게 제공"
+              ],
+              "techs": ["HTML", "CSS", "Javascript"]
+            }
+          ]
+        },
+        {
+          "name": "Paper0 Team",
+          "period": "2021년 1월 - 현재",
+          "description": "건강검진, 국가장학금 신청, 교통범칙금·과태료 납부 등 공공문서를 종이로 확인하던 사항들을 전자로 받아볼 수 있는 서비스를 토스 내 문서함에서 제공합니다.",
+          "projects": [
+            {
+              "name": "내 문서함 소개 페이지 개발",
+              "period": "2021년 1월 - 2021년 1월",
+              "details": [
+                "소개 페이지 개발",
+                "공유하기 기능을 이용해 인앱에서와 외부 웹에서의 진입을 자연스럽게 연결"
+              ],
+              "techs": ["Next.js", "Emotion", "React", "Typescript"]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "companyName": "에멘탈",
       "companyLink": "https://emmental.co.kr",
-      "companyLogo": "https://emmental.co.kr/images/logo_emmental_type2.svg",
+      "companyLogo": "https://emmental.co.kr/favicon-96x96.png",
       "position": "FrontEnd Developer",
       "period": "2019년 1월 - 2020년 10월",
       "teams": [
@@ -198,7 +257,8 @@
       "title": "도구",
       "details": [
         "Git 을 잘 사용하고, GitFlow 를 적용해 개발한 경험이 있습니다.",
-        "Webpack 이 빌드되는 방법을 이해하고 구성할 수 있습니다."
+        "Webpack 이 빌드되는 방법을 이해하고 구성할 수 있습니다.",
+        "Framer, Zeplin 등을 이용해 디자이너와 협업 할 수 있습니다."
       ]
     }
   ],

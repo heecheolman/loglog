@@ -100,7 +100,7 @@ const BusinessCard = styled.a`
 `
 
 const CompanyLogo = styled.img`
-  width: 90px;
+  width: 30px;
   height: auto;
 `
 
