@@ -6,6 +6,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { PAGE_WIDTH, PAGE_PADDING, HEADER_HEIGHT } from '../../config/ui'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
+import GlobalStyle from '../../styles/GlobalStyle'
 
 const Main = styled.main`
   display: block;
@@ -21,6 +22,7 @@ const ResumeLayout = ({ children, ...props }) => {
   const { author, title } = useSiteMetadata()
   return (
     <Box>
+      <GlobalStyle />
       <Header title={title} />
       <Main {...props}>{children}</Main>
       <Footer author={author} />

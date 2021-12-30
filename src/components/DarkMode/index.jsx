@@ -4,6 +4,25 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 import { ANIMATION } from '../../config/ui'
 
+const Toggle = props => {
+  return (
+    <ThemeToggler>
+      {({ theme, toggleTheme }) => (
+        <StyledLabel {...props}>
+          <StyledInput
+            type="checkbox"
+            onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+            checked={theme === 'dark'}
+          />
+          <Slider />
+        </StyledLabel>
+      )}
+    </ThemeToggler>
+  )
+}
+
+export default Toggle
+
 const StyledLabel = styled.label`
   position: relative;
   display: inline-block;
@@ -47,22 +66,3 @@ const StyledInput = styled.input`
     transform: translateX(16px);
   }
 `
-
-const Toggle = props => {
-  return (
-    <ThemeToggler>
-      {({ theme, toggleTheme }) => (
-        <StyledLabel {...props}>
-          <StyledInput
-            type="checkbox"
-            onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-            checked={theme === 'dark'}
-          />
-          <Slider />
-        </StyledLabel>
-      )}
-    </ThemeToggler>
-  )
-}
-
-export default Toggle

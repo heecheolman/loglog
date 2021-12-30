@@ -1,31 +1,110 @@
-.article {
+import React from 'react'
+import { css } from '@emotion/core'
+import { graphql } from 'gatsby'
+
+import MainLayout from '../../layouts/MainLayout'
+import Seo from '../../components/Seo'
+import Badge from '../../components/Badge'
+import Utterances from '../../components/Utterances'
+import styled from '@emotion/styled'
+
+function Post(props: any) {
+  const {
+    data: {
+      site: {
+        siteMetadata: { utterances },
+      },
+      markdownRemark: { html, frontmatter },
+    },
+  } = props
+
+  return (
+    <MainLayout>
+      <Seo
+        title={frontmatter.title}
+        description={frontmatter.description}
+        image={''}
+      />
+      <Article css={articleStyle}>
+        {/* <TableOfContents htmlText={tableOfContents} /> */}
+        <div
+          css={css`
+            margin-bottom: 3rem;
+          `}
+        >
+          {frontmatter.draft ? (
+            <Badge
+              css={css`
+                margin-bottom: 8px;
+              `}
+            >
+              작성중
+            </Badge>
+          ) : null}
+          <p
+            css={css`
+              font-size: 13px;
+              color: var(--textWeak);
+              margin-top: 0;
+              margin-bottom: 8px;
+            `}
+          >
+            {frontmatter.date}
+          </p>
+          <p
+            css={css`
+              font-size: 13px;
+              color: var(--textWeak);
+            `}
+          >
+            {frontmatter.description}
+          </p>
+        </div>
+        <Title>{frontmatter.title}</Title>
+        <section dangerouslySetInnerHTML={{ __html: html }} />
+      </Article>
+      <Utterances repo={utterances} />
+    </MainLayout>
+  )
+}
+
+export const PageQuery = graphql`
+  query PostQuery($slug: String!) {
+    site {
+      siteMetadata {
+        utterances
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      tableOfContents
+      frontmatter {
+        title
+        date(formatString: "YYYY년 M월 D일 HH:MM")
+        description
+        draft
+      }
+    }
+  }
+`
+
+export default Post
+
+const Article = styled.article`
   position: relative;
   z-index: 0;
   word-break: keep-all;
   margin-bottom: 6rem;
+`
 
-  .articleMeta {
-    margin-bottom: 3rem;
-
-    .createdAt {
-      font-size: 13px;
-      color: var(--textWeak);
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    .readTime {
-      font-size: 13px;
-      color: var(--textWeak);
-      margin-bottom: 8px;
-    }
-
-    .description {
-      font-size: 13px;
-      color: var(--textWeak);
-    }
-  }
-
+const Title = styled.h1`
+  margin-top: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--textNormal);
+`
+const articleStyle = css`
   .toc {
     ul {
       list-style: none;
@@ -229,4 +308,4 @@
     word-break: break-all;
     text-shadow: none;
   }
-}
+`

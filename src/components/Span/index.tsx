@@ -1,21 +1,17 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { css } from '@emotion/core'
 
-interface IProps {
+interface Props {
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
   fontSize?: number
+  children?: ReactNode
 }
 
 const DEFAULT_STYLE = css`
   display: inline;
 `
 
-const Span: React.FC<IProps> = ({
-  fontSize = 1,
-  fontWeight = 400,
-  children,
-  ...props
-}) => {
+function Span({ fontSize = 1, fontWeight = 400, children, ...props }: Props) {
   return (
     <span
       css={[

@@ -11,7 +11,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const PostTemplate = path.resolve('src/templates/Post/index.jsx')
+  const PostTemplate = path.resolve('src/templates/Post/index.tsx')
   const result = await graphql(`
     {
       allMarkdownRemark(

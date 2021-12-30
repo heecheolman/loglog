@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import ResumeLayout from '../../layouts/ResumeLayout'
 
-const Resume = ({ children }) => {
+interface Props {
+  children: ReactNode
+}
+
+function Resume({ children }: Props) {
   return <ResumeLayout>{children}</ResumeLayout>
 }
 
