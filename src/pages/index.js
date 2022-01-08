@@ -6,14 +6,16 @@ import MainLayout from '../layouts/MainLayout'
 import PostList from '../components/PostList'
 import PostItem from '../components/PostItem'
 import LinkButton from '../components/LinkButton'
+import Seo from '../components/Seo'
 
 import Box, { DisplayType, JustifyContent } from '../components/Box'
 
-const Posts = ({ data }) => {
+function Posts({ data }) {
   const { edges: postList } = data.allMarkdownRemark
 
   return (
     <MainLayout>
+      <Seo title="홈" />
       <Box
         display={DisplayType.FLEX}
         justifyContent={JustifyContent.FLEX_END}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { css, jsx, SerializedStyles } from '@emotion/core'
 
 type HeadingTags = keyof Pick<
@@ -6,8 +6,9 @@ type HeadingTags = keyof Pick<
   'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 >
 
-interface IProps {
+interface Props {
   heading?: HeadingTags
+  children: ReactNode
 }
 
 const DEFAULT_STYLE = css`
@@ -38,7 +39,7 @@ const TAG_STYLE: {
   `,
 }
 
-const Title: React.FC<IProps> = ({ heading = 'h1', children, ...props }) => {
+function Title({ heading = 'h1', children, ...props }: Props) {
   return jsx(
     heading,
     {

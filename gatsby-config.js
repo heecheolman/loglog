@@ -5,28 +5,13 @@ module.exports = {
     image: `/heecheolman-profile.jpg`,
     author: `heecheolman`,
     utterances: `heecheolman/loglog`,
-    description: `공부해서 정리하고 기록하는 공간입니다.`,
+    description: `개발공부와 일상을 담는 공간입니다.`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: `${__dirname}/src/images`,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

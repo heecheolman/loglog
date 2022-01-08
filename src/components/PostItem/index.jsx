@@ -8,33 +8,13 @@ import Title from '../Title'
 import P from '../P'
 import Badge from '../Badge'
 
-const StyledList = styled.li`
-  margin-bottom: 36px;
-
-  &:hover {
-    * {
-      color: var(--primary);
-    }
-  }
-`
-const StyledLink = styled(Link)`
-  width: 100%;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: 0.1s ease-out;
-  text-decoration: none;
-  transition: ${ANIMATION.duration.fast} color ${ANIMATION.function.hover};
-`
-
-const PostItem = ({
+function PostItem({
   title = '',
   createdAt,
   description = '',
   draft = false,
   path,
-}) => {
+}) {
   return (
     <StyledList>
       <StyledLink to={path}>
@@ -77,3 +57,23 @@ const PostItem = ({
 }
 
 export default PostItem
+
+const StyledList = styled.li`
+  margin-bottom: 36px;
+
+  &:hover {
+    * {
+      color: var(--primary);
+    }
+  }
+`
+const StyledLink = styled(Link)`
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: 0.1s ease-out;
+  text-decoration: none;
+  transition: ${ANIMATION.duration.fast} color ${ANIMATION.function.hover};
+`

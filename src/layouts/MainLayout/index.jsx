@@ -9,7 +9,7 @@ import { HEADER_HEIGHT, PAGE_PADDING, PAGE_WIDTH } from '../../config/ui'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import GlobalStyle from '../../styles/GlobalStyle'
 
-const MainLayout = ({ children, ...props }) => {
+function MainLayout({ children, ...props }) {
   const { author, title } = useSiteMetadata()
   return (
     <>

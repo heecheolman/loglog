@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const TableOfContents = ({ htmlText, className }) => {
+function TableOfContents({ htmlText, className }) {
   return (
     <Wrap className={className}>
       <Nav dangerouslySetInnerHTML={{ __html: htmlText }} />

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import ResumeLayout from '../layouts/ResumeLayout'
 import Introduce from '../resume-components/Introduce'
 import Career from '../resume-components/Career'
@@ -9,7 +8,7 @@ import Likes from '../resume-components/Likes'
 import Education from '../resume-components/Education'
 import Seo from '../components/Seo'
 
-const Resume = () => {
+function Resume() {
   return (
     <ResumeLayout>
       <Seo title="이력서" />

@@ -25,41 +25,51 @@ function Post(props: any) {
         description={frontmatter.description}
         image={''}
       />
-      <Article css={articleStyle}>
-        {/* <TableOfContents htmlText={tableOfContents} /> */}
-        <div
-          css={css`
-            margin-bottom: 3rem;
-          `}
-        >
-          {frontmatter.draft ? (
-            <Badge
-              css={css`
-                margin-bottom: 8px;
-              `}
-            >
-              작성중
-            </Badge>
-          ) : null}
-          <p
+      <div
+        css={css`
+          margin-bottom: 3rem;
+        `}
+      >
+        {frontmatter.draft ? (
+          <Badge
             css={css`
-              font-size: 13px;
-              color: var(--textWeak);
-              margin-top: 0;
               margin-bottom: 8px;
             `}
           >
-            {frontmatter.date}
-          </p>
-          <p
-            css={css`
-              font-size: 13px;
-              color: var(--textWeak);
-            `}
-          >
-            {frontmatter.description}
-          </p>
-        </div>
+            작성중
+          </Badge>
+        ) : null}
+        <p
+          css={css`
+            font-size: 13px;
+            color: var(--textWeak);
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 300;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            line-height: 1.8;
+          `}
+        >
+          {frontmatter.date}
+        </p>
+        <p
+          css={css`
+            font-size: 13px;
+            margin-top: 0;
+            color: var(--textWeak);
+            font-weight: 300;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            line-height: 1.8;
+          `}
+        >
+          {frontmatter.description}
+        </p>
+      </div>
+      <Article css={articleStyle}>
+        {/* <TableOfContents htmlText={tableOfContents} /> */}
+
         <Title>{frontmatter.title}</Title>
         <section dangerouslySetInnerHTML={{ __html: html }} />
       </Article>

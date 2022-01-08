@@ -18,7 +18,7 @@ const Main = styled.main`
   margin: 0 auto;
 `
 
-const ResumeLayout = ({ children, ...props }) => {
+function ResumeLayout({ children, ...props }) {
   const { author, title } = useSiteMetadata()
   return (
     <Box>
