@@ -14,98 +14,9 @@ import Title from '../../components/Title'
 import useResume from '../../hooks/useResume'
 import { ANIMATION } from '../../config/ui'
 
-const Section = styled.section`
-  margin-bottom: 100px;
-`
-
-const ProjectList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-`
-
-const ProjectListItem = styled.li`
-  margin-bottom: 48px;
-  padding-left: 16px;
-  border-left: 1px dashed var(--borderWeak);
-`
-
-const DetailList = styled.ul`
-  margin: 0;
-  padding: 12px 0 12px 0rem;
-  list-style: none;
-`
-
-const DetailListItem = styled.li`
-  position: relative;
-  padding-left: 16px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--textNormal);
-
-  &:before {
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    content: '•';
-    color: var(--primary);
-  }
-`
-
-const TechList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-`
-
-const TechListItem = styled.li`
-  margin: 2px;
-  padding: 4px 10px;
-  font-size: 0.8rem;
-  font-weight: 300;
-  background-color: var(--primaryButtonBg);
-  color: var(--primaryButtonText);
-  border-radius: 4px;
-  line-height: 1.3;
-`
-
-const BusinessCard = styled.a`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: 306px;
-  width: 100%;
-  height: 170px;
-  margin-bottom: 32px;
-  padding: 18px;
-  border: 1px solid var(--borderWeak);
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-
-  transition-property: all;
-  transition-duration: ${ANIMATION.duration.fast};
-  transition-timing-function: ${ANIMATION.function.hover};
-
-  &:hover {
-    border-color: var(--primary);
-    * {
-      color: var(--primary);
-    }
-  }
-`
-
-const CompanyLogo = styled.img`
-  width: 30px;
-  height: auto;
-`
-
 const Career = () => {
   const { career } = useResume()
+
   const careers = career.map((c, careerIndex) => {
     const teams = c.teams.map((t, teamIndex) => {
       const projects = t.projects.map((p, projectIndex) => {
@@ -132,21 +43,50 @@ const Career = () => {
             >
               {p.name}
             </Title>
-            <P
-              weak
-              fontWeight={300}
-              fontSize={0.9}
-              css={css`
-                margin-bottom: 16px;
-              `}
-            >
+            <P weak fontWeight={300} fontSize={0.9}>
               {p.period}
             </P>
-            <P fontWeight={300} fontSize={0.9}>
-              {p.description}
-            </P>
-            <DetailList>{details}</DetailList>
+            {p.description != null && (
+              <P
+                fontWeight={300}
+                fontSize={0.9}
+                css={css`
+                  margin-top: 8px;
+                `}
+              >
+                {p.description}
+              </P>
+            )}
+            <DetailList
+              css={css`
+                margin-top: 8px;
+              `}
+            >
+              {details}
+            </DetailList>
             <TechList>{techs}</TechList>
+            {p.references != null && (
+              <>
+                <P
+                  fontWeight={400}
+                  fontSize={0.9}
+                  css={css`
+                    margin-top: 16px;
+                  `}
+                >
+                  관련된 글이에요
+                </P>
+                <DetailList>
+                  {p.references.map(({ name, link }) => (
+                    <DetailListItem key={link}>
+                      <A href={link} target="_blank">
+                        {name}
+                      </A>
+                    </DetailListItem>
+                  ))}
+                </DetailList>
+              </>
+            )}
           </ProjectListItem>
         )
       })
@@ -239,3 +179,113 @@ const Career = () => {
 }
 
 export default Career
+
+const Section = styled.section`
+  margin-bottom: 180px;
+`
+
+const ProjectList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+const ProjectListItem = styled.li`
+  margin-bottom: 48px;
+  padding-left: 16px;
+  border-left: 1px dashed var(--borderWeak);
+`
+
+const DetailList = styled.ul`
+  margin: 0;
+  padding: 12px 0 12px 0rem;
+  list-style: none;
+`
+
+const Border = styled.div`
+  width: 100%:
+  height: 3px;
+  background-color: var(--borderWeak);
+`
+
+const DetailListItem = styled.li`
+  position: relative;
+  padding-left: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--textNormal);
+
+  &:before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    content: '•';
+    color: var(--primary);
+  }
+`
+
+const TechList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+const TechListItem = styled.li`
+  margin: 2px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  background-color: var(--primaryButtonBg);
+  color: var(--primaryButtonText);
+  border-radius: 4px;
+  line-height: 1.3;
+`
+
+const BusinessCard = styled.a`
+  display: flex;
+  flex-direction: column;
+  max-width: 306px;
+  width: 100%;
+  height: 170px;
+  margin-bottom: 32px;
+  padding: 18px;
+  border: 1px solid var(--borderWeak);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition-property: all;
+  transition-duration: ${ANIMATION.duration.fast};
+  transition-timing-function: ${ANIMATION.function.hover};
+
+  &:hover {
+    border-color: var(--primary);
+    * {
+      color: var(--primary);
+    }
+  }
+`
+const A = styled.a`
+  font-size: 0.9rem;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: 200;
+  color: var(--textNormal);
+  transition: ${ANIMATION.duration.fast} color ${ANIMATION.function.hover};
+
+  &:hover {
+    color: var(--primary);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+`
+
+const CompanyLogo = styled.img`
+  width: 30px;
+  height: auto;
+`

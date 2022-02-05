@@ -11,12 +11,106 @@
   },
   "career": [
     {
-      "companyName": "비바리퍼블리카",
+      "companyName": "Viva Republica (Toss)",
       "companyLink": "https://toss.im",
       "companyLogo": "https://static.toss.im/tds/favicon/favicon.ico",
       "position": "FrontEnd Developer",
       "period": "2020년 11월 - 현재",
       "teams": [
+        {
+          "name": "Paper0 Team",
+          "period": "2021년 1월 - 현재",
+          "description": "건강검진, 국가장학금 신청, 교통범칙금·과태료 납부 등 공공문서를 종이로 확인하던 사항들을 전자로 받아볼 수 있는 서비스를 토스 내 문서함에서 제공합니다.",
+          "projects": [
+            {
+              "name": "공인전자문서 중계자 어드민 개발",
+              "period": "2021년 1월 - 2021년 4월",
+              "description": "전자문서유통 자격을 획득하기 위한 '공인전자문서중계자' 어드민 개발",
+              "details": [
+                "권한관리 기능 개발",
+                "행위 추적 로그 조회 기능 개발",
+                "전자문서 유통 기관 등록 기능 개발",
+                "2차인증을 통한 로그인 기능 개발"
+              ],
+              "techs": ["React", "Next.js", "Typescript", "Emotion"],
+              "references": [
+                {
+                  "name": "토스, 공인전자문서중계자 인증 획득… 공공서비스 확대 나설것 - 토스피드",
+                  "link": "https://blog.toss.im/article/toss-electronic-document"
+                }
+              ]
+            },
+            {
+              "name": "내 문서함 소개 및 설정 개발",
+              "period": "2021년 4월 - 현재",
+              "description": "내 문서함 서비스에 대한 소개 페이지와 각 서비스별 설정 기능 개발",
+              "details": [
+                "원링크를 이용해 공유하기 기능 개발",
+                "각 서비스별 설정 (알림해지, 구독해지 등) 기능 개발"
+              ],
+              "techs": ["React", "Next.js", "Typescript", "Emotion"],
+              "references": [
+                {
+                  "name": "수많은 공공 문서, 이제 토스로 한번에 관리하세요 - 토스피드",
+                  "link": "https://blog.toss.im/article/electronic-document"
+                }
+              ]
+            },
+            {
+              "name": "코로나 QR체크인",
+              "period": "2021년 7월 - 2022년 2월",
+              "description": "코로나19 출입 QR체크인을 토스에서도 이용할 수 있게 개발했고 코로나예방접종증명서도 발급 받을 수 있습니다.",
+              "details": [
+                "구형 기기와 브라우저를 위해 성능 개선 및 크로스브라우징",
+                "접근성(a11y) 개선",
+                "framer 를 이용해 다양한 애니메이션 적용 (카드 뒤집기, 홀로그램)",
+                "테스트코드를 작성해 다양한 조건에 대한 안정성 보장"
+              ],
+              "techs": [
+                "React",
+                "Next.js",
+                "Typescript",
+                "Emotion",
+                "React Native",
+                "Jest",
+                "framer"
+              ],
+              "references": [
+                {
+                  "name": "토스로 QR 체크인 하면 좋은 점 3가지 - 토스피드",
+                  "link": "https://blog.toss.im/article/qr-checkin"
+                }
+              ]
+            },
+            {
+              "name": "2021 국민지원금 사전 알림 신청",
+              "period": "2021년 9월 - 2021년 12월",
+              "description": "2021년 국민지원금 신청은 생년월일에 따라 신청시기가 다릅니다. 이에 따라 놓치지 않게 사전 알림을 주는 서비스를 개발했습니다.",
+              "details": [
+                "생년월일, 신청시기 등 다양한 케이스에 대한 테스트코드 작성으로 안정성 향상",
+                "짧은 기간 내에 다양한 A/B 테스트를 통해 전환율 향상"
+              ],
+              "techs": ["React", "Next.js", "Typescript", "Emotion", "Jest"],
+              "references": [
+                {
+                  "name": "국민지원금, 대상여부·신청시기까지 “토스에서 받아보세요” - 토스피드",
+                  "link": "https://blog.toss.im/article/disaster-support"
+                }
+              ]
+            },
+            {
+              "name": "내 문서함 상세 마이그레이션",
+              "period": "2021년 10월 - 2022년 1월",
+              "description": "내 문서함의 상세에 보여지는 다양한 콘텐츠가 있는데, 팀 내에서 네이티브(iOS, Android)로 개발하다가 버전관리 의존성이슈가 있어 웹으로 100% 전환했습니다.",
+              "details": [
+                "내 문서함에 들어가는 모든 콘텐츠 템플릿(국민비서, 흥국생명 미납 알림 등) 공통화",
+                "iOS, Android, 서버가 관리하던 버전별 코드 레거시 제거",
+                "Sentry 를 이용해 장애 감지"
+              ],
+              "techs": ["React", "Next.js", "Typescript", "Emotion", "Jest"]
+            }
+          ]
+        },
         {
           "name": "Inform Team",
           "period": "2020년 11월 - 현재",
@@ -24,6 +118,7 @@
           "projects": [
             {
               "name": "VanillaJS TDS UI 라이브러리 개발",
+              "description": "제휴은행사가 사용하고 유지보수하기 편리하도록 VanillaJS 버전의 TDS UI 라이브러리를 개발",
               "period": "2020년 11월 - 현재",
               "details": [
                 "마크업환경(HTML, CSS, JS)에서 TDS를 사용하기 위해 기존 React 코드를 VanillaJS 버전으로 개발",
@@ -45,32 +140,17 @@
               "name": "제휴은행사 웹 연동",
               "period": "2020년 11월 - 현재",
               "details": [
-                "VanillaJS 버전의 TDS UI 라이브러리를 이용해 개발된 마크업파일을 제휴은행사에게 제공"
+                "VanillaJS 버전의 TDS UI 라이브러리를 이용해 개발된 마크업파일을 제휴은행사에게 제공",
+                "광주은행, 전북은행, 경남은행, 부산은행, 우체국, SC제일은행과 협업해 계좌알림 받기 연동"
               ],
               "techs": ["HTML", "CSS", "Javascript"]
-            }
-          ]
-        },
-        {
-          "name": "Paper0 Team",
-          "period": "2021년 1월 - 현재",
-          "description": "건강검진, 국가장학금 신청, 교통범칙금·과태료 납부 등 공공문서를 종이로 확인하던 사항들을 전자로 받아볼 수 있는 서비스를 토스 내 문서함에서 제공합니다.",
-          "projects": [
-            {
-              "name": "내 문서함 소개 페이지 개발",
-              "period": "2021년 1월 - 2021년 1월",
-              "details": [
-                "소개 페이지 개발",
-                "공유하기 기능을 이용해 인앱에서와 외부 웹에서의 진입을 자연스럽게 연결"
-              ],
-              "techs": ["Next.js", "Emotion", "React", "Typescript"]
             }
           ]
         }
       ]
     },
     {
-      "companyName": "에멘탈",
+      "companyName": "지엔터프라이즈, (구)에멘탈",
       "companyLink": "https://emmental.co.kr",
       "companyLogo": "https://emmental.co.kr/favicon-96x96.png",
       "position": "FrontEnd Developer",
